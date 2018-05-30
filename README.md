@@ -1,6 +1,6 @@
-# Boilerplate for LabPlus Projects
+# Community Services Directory
 
-A barebones template to get started on a new project.
+Browse and acquire services
 
 ## How to configure and run
 
