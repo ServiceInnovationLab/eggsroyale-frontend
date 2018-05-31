@@ -3,7 +3,8 @@
   "homepage": "https://ServiceInnovationLab.github.io/eggsroyale-frontend",
   "version": "0.1.0",
   "private": false,
-  "repository": "git@github.com:ServiceInnovationLab/eggsroyale-frontend.git",
+  "repository": "git@github.com:ServiceInnovationLab/eggsroyale-frontend
+  .git",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-preset-stage-2": "^6.24.1",
