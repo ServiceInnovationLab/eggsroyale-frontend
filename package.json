@@ -1,6 +1,6 @@
 {
-  "name": "Eggs Royale",
-  "homepage": "https://ServiceInnovationLab.github.io/eggsroyale-pancake",
+  "name": "eggsroyale",
+  "homepage": "https://ServiceInnovationLab.github.io/eggsroyale-frontend",
   "version": "0.1.0",
   "private": false,
   "repository": "git@github.com:ServiceInnovationLab/ProjectBoilerplate.git",
