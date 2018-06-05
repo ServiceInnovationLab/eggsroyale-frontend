@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import AppCon from './container/app-container';
+import Listings from './components/Templates/Listings';
 import ServiceInfo from './components/Service/ServiceInfo';
 import Footer from './components/Templates/Footer';
 // import { createStore, applyMiddleware, compose } from 'redux';
@@ -23,7 +24,7 @@ class App extends React.Component {
 
           <Switch>
             <Route exact path="/" component={AppCon} />
-            <Route path="/category/:category" component={AppCon} />
+            <Route path="/home" component={Listings} />
             <Route path="/service/:name" component={ServiceInfo} />
           </Switch>
         </div>
