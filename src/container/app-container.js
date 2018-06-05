@@ -23,7 +23,7 @@ class AppCon extends Component {
     return (
       <div>
         <header>
-          <div class="container">
+          <div className="container">
             <h1>Community Rewards</h1>
           </div>
         </header>
