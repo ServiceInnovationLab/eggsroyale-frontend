@@ -20,7 +20,6 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div>
-          <h1 className="container-fluid">Find Whānau Support - Mobile Site</h1>
 
           <Switch>
             <Route exact path="/" component={AppCon} />

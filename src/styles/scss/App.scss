@@ -1,1 +1,72 @@
-body { color: #333; }
+body {
+  background: rgba(101,111,125,1);
+}
+
+.home {
+  background: rgba(52,152,219,1);
+}
+
+.health {
+  background: rgba(255,99,65,1);
+}
+
+.food {
+  background: rgba(46,198,204,1);
+}
+
+.activities {
+  background: rgba(255,145,0,1);
+}
+
+.wellbeing {
+  background: rgba(38,194,122,1);
+}
+
+// GENERIC
+
+.container {
+  margin: 0 10px;
+}
+
+header {
+  background: rgba(63,127,150,1);
+  padding: 10px 0;
+  h1 {
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 20px;
+  }
+}
+
+nav {
+  a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    padding: 20px;
+    font-size: 27px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(#000, .4);
+    position: relative;
+  }
+
+  svg {
+    font-size: 50px !important;
+    position: absolute;
+    top: 10px;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 90px;
+  }
+}
+
+.list-stripped {
+  list-style: none;
+  padding-left: 0;
+}

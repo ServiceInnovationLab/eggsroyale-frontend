@@ -5,6 +5,10 @@
   "private": false,
   "repository": "git@github.com:ServiceInnovationLab/eggsroyale-frontend.git",
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "0.0.20",
     "axios": "^0.18.0",
     "babel-preset-stage-2": "^6.24.1",
     "geolib": "^2.0.24",
