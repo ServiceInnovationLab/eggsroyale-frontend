@@ -51,12 +51,6 @@ jobs:
       - run: npm install
       - run: ./.circleci/deploy-ghpages.sh
 
-  notify:
-    docker:
-      - image: circleci/node:9.11
-    steps:
-      - checkout
-      - run: ./notify-github.sh
 
 workflows:
   version: 2
@@ -71,6 +65,4 @@ workflows:
           filters:
             branches:
               only: feature/circle-ci
-      - notify:
-          requires: deploy
 
