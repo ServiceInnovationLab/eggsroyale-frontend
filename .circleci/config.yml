@@ -63,7 +63,7 @@ jobs:
       - checkout
       - run: npm install
       - run: ./.circleci/deploy-ghpages.sh
-      - run: ./.circleci/notify-github.sh
+      # - run: ./.circleci/notify-github.sh
 
 workflows:
   version: 2
