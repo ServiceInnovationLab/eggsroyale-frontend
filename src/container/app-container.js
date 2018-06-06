@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from '../components/App';
+// import App from '../components/App';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/index';
 
@@ -15,7 +15,7 @@ import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee';
 import faLeaf from '@fortawesome/fontawesome-free-solid/faLeaf';
 import { Link } from 'react-router-dom';
 
-fontawesome.library.add(brands, faHome, faPlusSquare, faCoffee, faFutbol, faLeaf)
+fontawesome.library.add(brands, faHome, faPlusSquare, faCoffee, faFutbol, faLeaf);
 
 class AppCon extends Component {
 
