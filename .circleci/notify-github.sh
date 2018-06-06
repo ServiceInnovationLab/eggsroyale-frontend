@@ -13,3 +13,10 @@ create_gh_deployment () {
 # Keep track of the deployment id as $gh_deploy_id for later. We're using https://stedolan.github.io/jq/ to parse the JSON to grab the id.
 declare -r created_gh_deployment=$(create_gh_deployment)
 declare -r gh_deploy_id=$(echo $created_gh_deployment | jq .id)
+
+
+git tag "build-$CIRCLE_BUILD_NUM"
+git tag "release-$created_gh_deployment"
+
+git push origin "build-$CIRCLE_BUILD_NUM"
+git push origin "release-$created_gh_deployment"
