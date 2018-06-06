@@ -40,7 +40,6 @@ jobs:
       - image: circleci/node:9.11
     steps:
       - checkout
-      - run: npm i npm@latest -g
       - run: npm run build
 
   deploy:
@@ -48,7 +47,6 @@ jobs:
       - image: circleci/node:9.11
     steps:
       - checkout
-      - run: npm i npm@latest -g
       - run: npm install
       - run: ./.circleci/deploy-ghpages.sh
 
