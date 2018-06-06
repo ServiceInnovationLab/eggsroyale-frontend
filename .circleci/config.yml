@@ -64,5 +64,7 @@ workflows:
             - build
           filters:
             branches:
-              only: feature/circle-ci
+              only:
+                - feature/circle-ci
+                - master
 
