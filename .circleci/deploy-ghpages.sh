@@ -10,6 +10,9 @@ remote=$(git config remote.origin.url)
 git config --global user.email "$CIRCLE_PROJECT_USERNAME@circleci"
 git config --global user.name $CIRCLE_PROJECT_USERNAME
 
+git remote rm origin
+git remote add origin  https://${GH_USER}:${GITHUB_TOKEN}@github.com/${CIRCLE_PROJECT_REPONAME}.git
+
 npm run deploy
 
 # # Create a deployment
