@@ -7,7 +7,6 @@ class ServiceCategories extends React.Component {
   render() {
     return (
       <div className="service-categories">
-        <small><b>Service categories: </b></small>
         <small>
           <ul className="list-stripped">
             {this.props.categories.map((data,index) => <Route key={index} render={() => (

@@ -16,7 +16,6 @@ class Footer extends React.Component {
           <div className="footer-item">
             <p>Data sourced from <a href="https://data.govt.nz">data.govt.nz</a></p>
             <p>Another alpha from the <a href="https://webtoolkit.govt.nz/blog/tag/service-innovation-lab/">Service Innovation Lab</a></p>
-            <p>Please find the full directory or add your services at <a href="//familyservices.govt.nz/directory">familyservices.govt.nz/directory</a></p>
           </div>
           {this.displayGovtFooter() &&
             <div className="footer-push">
