@@ -1,76 +1,15 @@
 @import "./variables";
 
 .footer {
-  background-color: $primary-dark;
-  color: $white;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  background-color: $footer-background;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 40px;
 
-  ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-  }
+  nav {
 
-  li {
-    list-style: none;
-    margin-left: 0;
-    margin-bottom: 0;
-    padding: 0;
-  }
-
-  p {
-    margin-top: 0;
-  }
-
-  .container {
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 1rem;
-  }
-
-  img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-  }
-
-  a {
-    display: inline-block;
-    font-size: 15px;
-    &:link,
-    &:visited {
-      color: $white;
-      border-bottom: 1px dotted $black;
-    }
-  }
-}
-
-.footer-item {
-  margin-bottom: 3rem;
-}
-
-.footer-icons {
-  margin-bottom: 1rem;
-}
-
-.footer-utility-nav {
-  margin: 0 auto;
-  max-width: 270px;
-  li {
-    display: inline-block;
-    text-align: center;
-    width: 33.33%;
-  }
-}
-
-.footer-hm-link {
-  display: block;
-  max-width: 352px;
-}
-
-@media screen and (min-width: 426px){
-  .footer-utility-nav {
-    margin: initial;
   }
 }

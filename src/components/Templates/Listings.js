@@ -4,9 +4,17 @@ import React from 'react';
 
 class Listings extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: window.location.href.split('/').slice(-1)[0]
+    };
+  }
   render(){
+    
     return (
-      <p>Listing Page</p>
+      <p>{this.state.page} page</p>
     );
   }
 }

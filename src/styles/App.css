@@ -1,4 +1,18 @@
+html {
+  height: 100%;
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
 body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   background: #656f7d; }
 
 .home {
@@ -17,7 +31,8 @@ body {
   background: #26c27a; }
 
 .container {
-  margin: 0 10px; }
+  margin: 0 10px;
+  position: relative; }
 
 header {
   background: #3f7f96;

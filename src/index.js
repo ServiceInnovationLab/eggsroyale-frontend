@@ -25,7 +25,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={AppCon} />
             <Route path="/home" component={Listings} />
-            <Route path="/service/:name" component={ServiceInfo} />
+            <Route path="/health" component={Listings} />
+            <Route path="/wellbeing" component={Listings} />
+            <Route path="/activities" component={Listings} />
+            <Route path="/food" component={Listings} />
           </Switch>
         </div>
       </HashRouter>
