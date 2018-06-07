@@ -33,7 +33,11 @@ class Service extends React.Component {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
         <header className={`home-header compact`}>
-          <Link to="/" className="back-link"><span className="arrow arrow-left arrow-sm"></span><span>Home</span><span className="aria-hidden">Navigate to home</span></Link>
+          <Link to="/" className="back-link">
+            <span className="arrow arrow-left arrow-sm"></span>
+            <FontAwesomeIcon icon="home" />
+            <span><p>Home</p></span>
+            <span className="aria-hidden">Navigate to home</span></Link>
         </header>
         <div className={`${this.renderTheme(this.state.page)} sub-header`}>
           <div className="container">
@@ -54,11 +58,11 @@ class Service extends React.Component {
           <p>
           We offer families who have a Community Services Card free, lined curtains for their living rooms.</p>
 
- <p>If there are children, older people or people with health issues in the home, we can also make curtains for bedrooms.</p>
+          <p>If there are children, older people or people with health issues in the home, we can also make curtains for bedrooms.</p>
 
-<p>Wellington Curtain Bank upcycles good quality curtains donated by the public to fit your windows and help you keep heat in, cold out and power bills down.</p>
+          <p>Wellington Curtain Bank upcycles good quality curtains donated by the public to fit your windows and help you keep heat in, cold out and power bills down.</p>
 
-<p>If you would like to donate your preloved curtains, please read this page for more info.
+          <p>If you would like to donate your preloved curtains, please read this page for more info.
           </p>
         </div>
       </div>

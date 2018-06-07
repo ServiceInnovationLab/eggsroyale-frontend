@@ -8,6 +8,27 @@ header {
   &.compact {
     box-shadow: 0 2px 10px rgba(#000, .7);
     height: 32px;
+    overflow: auto;
+    svg {
+      height: 20px;
+      top: -5px;
+      left: -30px;
+    }
+    // a {
+    //   color: white;
+    //   margin-left: 0;
+    // }
+    span {
+      position: absolute;
+      margin-left: 0;
+      color: white;
+      p {
+        position: absolute;
+        top: -5px;
+        left: -30px;
+        color: white;
+      }
+    }
   }
   h1 {
     margin: 0;

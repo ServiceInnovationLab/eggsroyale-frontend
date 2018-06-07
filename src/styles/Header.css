@@ -6,7 +6,21 @@ header {
     background-color: orange; }
   header.compact {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-    height: 32px; }
+    height: 32px;
+    overflow: auto; }
+    header.compact svg {
+      height: 20px;
+      top: -5px;
+      left: -30px; }
+    header.compact span {
+      position: absolute;
+      margin-left: 0;
+      color: white; }
+      header.compact span p {
+        position: absolute;
+        top: -5px;
+        left: -30px;
+        color: white; }
   header h1 {
     margin: 0;
     color: #fff;
