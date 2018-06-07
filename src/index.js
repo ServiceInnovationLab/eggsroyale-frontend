@@ -12,6 +12,8 @@ import thunk from 'redux-thunk';
 import reducers from './reducers/index';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
+import './styles/Header.css';
+
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 const store = createStore(reducers, applyMiddleware(thunk));
@@ -21,7 +23,11 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div>
-
+          <header>
+            <div className="container">
+              <h1>Community Rewards</h1>
+            </div>
+          </header>
           <Switch>
             <Route exact path="/" component={AppCon} />
             <Route path="/home" component={Listings} />

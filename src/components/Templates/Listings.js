@@ -1,7 +1,15 @@
 import React from 'react';
-// import '../../styles/Listings.css';
+import {Link} from 'react-router-dom';
+import fontawesome from '@fortawesome/fontawesome';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
+import home from '@fortawesome/fontawesome-free-solid/faHome';
+import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
+import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
+import food from '@fortawesome/fontawesome-free-solid/faCoffee';
+import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
 
-
+fontawesome.library.add(brands, home, health, activities, food, wellbeing);
 class Listings extends React.Component {
 
   constructor(props) {
@@ -11,10 +19,54 @@ class Listings extends React.Component {
       page: window.location.href.split('/').slice(-1)[0]
     };
   }
+
+  renderTheme(state) {
+    switch(state) {
+    case state:
+      return state;
+    }
+  }
+  renderIcon(state) {
+    switch(state) {
+    case 'home':
+      return 'home';
+    case 'food':
+      return 'coffee';
+    case 'activities':
+      return 'futbol';
+    case 'wellbeing':
+      return 'leaf';
+    case 'health':
+      return 'plus-square';
+    }
+  }
   render(){
-    
+
     return (
-      <p>{this.state.page} page</p>
+      <div className="listing">
+        <header className={this.renderTheme(this.state.page)}>
+          <Link to="/" className="back-link"><span className="arrow arrow-left"></span><span className="aria-hidden">Navigate to home</span></Link>
+          <FontAwesomeIcon icon={this.renderIcon(this.state.page)} />
+          <h2>{this.state.page}</h2>
+        </header>
+        <div className="container">
+          <ul className="list-stripped">
+            {
+              ['test', 'test'].map(item => {
+                return <li className={`${this.renderTheme(this.state.page)}`}>
+                  <img className="img-rounded img-inline" src="http://placekitten.com/200/300" />
+                  <span>
+                    <h3>{item}</h3>
+                    <p>Paragraph text here</p>
+                  </span>
+                </li>
+              })
+            }
+          </ul>
+        </div>
+
+
+      </div>
     );
   }
 }

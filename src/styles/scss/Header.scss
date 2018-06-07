@@ -1,0 +1,14 @@
+header {
+  background: rgba(63,127,150,1);
+  padding: 10px 0;
+  text-align: center;
+  &.listing {
+    background-color: orange;
+  }
+  h1 {
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+  }
+}

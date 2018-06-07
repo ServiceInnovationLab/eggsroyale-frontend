@@ -22,11 +22,6 @@ class AppCon extends Component {
   render() {
     return (
       <div>
-        <header>
-          <div className="container">
-            <h1>Community Rewards</h1>
-          </div>
-        </header>
         <main>
           <nav className="container">
             <ul className="list-stripped">
