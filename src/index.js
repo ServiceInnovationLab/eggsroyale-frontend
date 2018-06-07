@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import AppCon from './container/app-container';
 import Listings from './components/Templates/Listings';
-import ServiceInfo from './components/Service/ServiceInfo';
+import Service from './components/Templates/Service';
 import Footer from './components/Templates/Footer';
 // import { createStore, applyMiddleware, compose } from 'redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -30,11 +30,12 @@ class App extends React.Component {
           </header>
           <Switch>
             <Route exact path="/" component={AppCon} />
-            <Route path="/home" component={Listings} />
-            <Route path="/health" component={Listings} />
-            <Route path="/wellbeing" component={Listings} />
-            <Route path="/activities" component={Listings} />
-            <Route path="/food" component={Listings} />
+            <Route exact path="/home" component={Listings} />
+            <Route exact path="/health" component={Listings} />
+            <Route exact path="/wellbeing" component={Listings} />
+            <Route exact path="/activities" component={Listings} />
+            <Route exact path="/food" component={Listings} />
+            <Route exact path="/:category/:id" component={Service} />
           </Switch>
         </div>
       </HashRouter>

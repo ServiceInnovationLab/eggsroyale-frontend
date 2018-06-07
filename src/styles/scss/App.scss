@@ -18,24 +18,48 @@ body {
   background: rgba(101,111,125,1);
 }
 
-.home {
+.home-header {
   background: rgba(52,152,219,1);
+}
+
+.home {
+  background: rgba(67,122,199,1);
+}
+
+.home-bg {
+  background: rgba(46,97,169,1);
 }
 
 .health {
   background: rgba(255,99,65,1);
 }
 
+.health-bg {
+  background: rgba(239,146,114,1);
+}
+
 .food {
   background: rgba(46,198,204,1);
+}
+
+.food-bg {
+  background: rgba(114,239,230,1);
 }
 
 .activities {
   background: rgba(255,145,0,1);
 }
 
+.activities-bg {
+  background: rgba(239,192,114,1);
+}
+
 .wellbeing {
   background: rgba(38,194,122,1);
+}
+
+.wellbeing-bg {
+  background: rgba(114,239,165,1);
 }
 
 // GENERIC
@@ -119,6 +143,10 @@ nav {
 
 .back-link {
   position: relative;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 span.arrow {
@@ -126,9 +154,14 @@ span.arrow {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 6px;
-  position: position;
+  position: absolute;
   top: 130%;
   left: -125px;
+
+  &.arrow-sm {
+    padding: 4px;
+    top: 0;
+  }
 }
 
 .arrow-left {
@@ -139,4 +172,47 @@ span.arrow {
 
 .aria-hidden {
   display: none !important;
+}
+
+.sub-header {
+  text-align: center;
+  padding: 20px 0;
+  img {
+    height: 65px;
+    width: 65px;
+    margin-right: 10px;
+  }
+  svg {
+    position: absolute;
+    right: 14px;
+    top: -6px;
+    height: 31px;
+  }
+  header {
+    text-align: left;
+    vertical-align: top;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 15px;
+    color: rgba(white, .7);
+  }
+  h2,
+  p {
+    margin: 0;
+  }
+}
+
+.service {
+  .container-inner {
+    margin: 0 40px;
+  }
+
+  p,
+  strong {
+    color: white;
+    line-height: 1.4em;
+  }
 }

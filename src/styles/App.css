@@ -15,20 +15,38 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #656f7d; }
 
-.home {
+.home-header {
   background: #3498db; }
+
+.home {
+  background: #437ac7; }
+
+.home-bg {
+  background: #2e61a9; }
 
 .health {
   background: #ff6341; }
 
+.health-bg {
+  background: #ef9272; }
+
 .food {
   background: #2ec6cc; }
+
+.food-bg {
+  background: #72efe6; }
 
 .activities {
   background: #ff9100; }
 
+.activities-bg {
+  background: #efc072; }
+
 .wellbeing {
   background: #26c27a; }
+
+.wellbeing-bg {
+  background: #72efa5; }
 
 .container {
   margin: 0 10px;
@@ -92,15 +110,21 @@ nav span {
 
 .back-link {
   position: relative; }
+  .back-link a {
+    text-decoration: none;
+    color: white; }
 
 span.arrow {
   border: solid #fff;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 6px;
-  position: position;
+  position: absolute;
   top: 130%;
   left: -125px; }
+  span.arrow.arrow-sm {
+    padding: 4px;
+    top: 0; }
 
 .arrow-left {
   transform: rotate(135deg);
@@ -109,5 +133,36 @@ span.arrow {
 
 .aria-hidden {
   display: none !important; }
+
+.sub-header {
+  text-align: center;
+  padding: 20px 0; }
+  .sub-header img {
+    height: 65px;
+    width: 65px;
+    margin-right: 10px; }
+  .sub-header svg {
+    position: absolute;
+    right: 14px;
+    top: -6px;
+    height: 31px; }
+  .sub-header header {
+    text-align: left;
+    vertical-align: top; }
+  .sub-header h2 {
+    font-size: 20px; }
+  .sub-header p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7); }
+  .sub-header h2,
+  .sub-header p {
+    margin: 0; }
+
+.service .container-inner {
+  margin: 0 40px; }
+.service p,
+.service strong {
+  color: white;
+  line-height: 1.4em; }
 
 /*# sourceMappingURL=App.css.map */

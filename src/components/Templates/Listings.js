@@ -26,6 +26,7 @@ class Listings extends React.Component {
       return state;
     }
   }
+
   renderIcon(state) {
     switch(state) {
     case 'home':
@@ -43,7 +44,7 @@ class Listings extends React.Component {
   render(){
 
     return (
-      <div className="listing">
+      <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
         <header className={this.renderTheme(this.state.page)}>
           <Link to="/" className="back-link"><span className="arrow arrow-left"></span><span className="aria-hidden">Navigate to home</span></Link>
           <FontAwesomeIcon icon={this.renderIcon(this.state.page)} />
@@ -52,20 +53,19 @@ class Listings extends React.Component {
         <div className="container">
           <ul className="list-stripped">
             {
-              ['test', 'test'].map(item => {
+              ['free-curtains', 'listing2'].map(item => {
                 return <li className={`${this.renderTheme(this.state.page)}`}>
-                  <img className="img-rounded img-inline" src="http://placekitten.com/200/300" />
-                  <span>
-                    <h3>{item}</h3>
-                    <p>Paragraph text here</p>
-                  </span>
-                </li>
+                  <Link to={`${this.state.page}/${item}`}><img className="img-rounded img-inline" src="http://placekitten.com/200/300" />
+                    <span>
+                      <h3>{item}</h3>
+                      <p>Paragraph text here</p>
+                    </span>
+                  </Link>
+                </li>;
               })
             }
           </ul>
         </div>
-
-
       </div>
     );
   }
