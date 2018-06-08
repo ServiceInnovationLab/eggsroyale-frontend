@@ -195,7 +195,7 @@ exports[`components <function Service(props) {
       allowfullscreen={true}
       frameborder="0"
       src="https://www.youtube.com/embed/GsLB-M5bk00"
-      title=""
+      title="video-example"
       width="100%"
     />
     <p>
