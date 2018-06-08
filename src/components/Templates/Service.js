@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from '../Image';
-import BrowserRouter, {Link} from 'react-router-dom';
 import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
@@ -43,7 +42,7 @@ class Service extends React.Component {
           <p>
             <strong>Do you have a cold home and a Community Services Card? Wellington Curtain Bank can help.</strong>
           </p>
-          <iframe width="100%" src="https://www.youtube.com/embed/GsLB-M5bk00" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe width="100%" src="https://www.youtube.com/embed/GsLB-M5bk00" frameborder="0" title="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
           <p>
           We offer families who have a Community Services Card free, lined curtains for their living rooms.</p>
@@ -77,7 +76,7 @@ const Subheader = props => {
   return (
     <div className={`${props.theme} sub-header`}>
       <div className="container">
-        <Image src={props.image} />
+        <Image src={props.image} alt={props.alt} />
         <header className={props.theme} style={{display: 'inline-block'}}>
           <FontAwesomeIcon icon="bookmark" />
           <h2>{props.service}</h2>

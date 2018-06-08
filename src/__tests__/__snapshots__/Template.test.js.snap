@@ -46,6 +46,7 @@ exports[`components <function Listings(props) {
           href="about:blank/free-curtains"
         >
           <img
+            alt="kitten"
             className="img-rounded img-inline"
             src="http://placekitten.com/200/300"
           />
@@ -66,6 +67,7 @@ exports[`components <function Listings(props) {
           href="about:blank/listing2"
         >
           <img
+            alt="kitten"
             className="img-rounded img-inline"
             src="http://placekitten.com/200/300"
           />
@@ -193,6 +195,7 @@ exports[`components <function Service(props) {
       allowfullscreen={true}
       frameborder="0"
       src="https://www.youtube.com/embed/GsLB-M5bk00"
+      title=""
       width="100%"
     />
     <p>

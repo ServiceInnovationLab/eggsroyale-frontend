@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from '../Image';
 import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
@@ -23,6 +24,8 @@ class Listings extends React.Component {
     switch(state) {
     case state:
       return state;
+    default:
+      return 'home';
     }
   }
 
@@ -54,7 +57,8 @@ class Listings extends React.Component {
             {
               ['free-curtains', 'listing2'].map((item, key) => {
                 return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
-                  <a href={`${this.state.page}/${item}`}><img className="img-rounded img-inline" src="http://placekitten.com/200/300" />
+                  <a href={`${this.state.page}/${item}`}>
+                    <Image src="http://placekitten.com/200/300" alt="kitten" />
                     <span>
                       <h3>{item}</h3>
                       <p>Paragraph text here</p>

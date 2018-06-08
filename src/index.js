@@ -6,7 +6,6 @@ import Footer from './components/Templates/Footer';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reducers from './reducers/index';
-import ServiceInfo from './components/Service/ServiceInfo';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { HashRouter, Route, Switch } from 'react-router-dom';
