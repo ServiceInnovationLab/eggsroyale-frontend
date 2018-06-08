@@ -25,6 +25,8 @@ class Service extends React.Component {
     switch(state) {
     case state:
       return state;
+    default:
+      return 'home';
     }
   }
 
@@ -42,7 +44,7 @@ class Service extends React.Component {
           <p>
             <strong>Do you have a cold home and a Community Services Card? Wellington Curtain Bank can help.</strong>
           </p>
-          <iframe width="100%" src="https://www.youtube.com/embed/GsLB-M5bk00" frameborder="0" title="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe width="100%" src="https://www.youtube.com/embed/GsLB-M5bk00" frameborder="0" title="video-example" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
           <p>
           We offer families who have a Community Services Card free, lined curtains for their living rooms.</p>
