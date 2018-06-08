@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components <function Listings(props) {
+    _classCallCheck(this, Listings);
+
+    var _this = _possibleConstructorReturn(this, (Listings.__proto__ || Object.getPrototypeOf(Listings)).call(this, props));
+
+    _this.state = {
+      page: window.location.href.split('/').slice(-1)[0]
+    };
+    return _this;
+  } /> renders correctly 1`] = `
+<div
+  className="about:blank-bg listing"
+>
+  <header
+    className="about:blank"
+  >
+    <a
+      className="back-link"
+      href="/"
+    >
+      <span
+        className="arrow arrow-left"
+      />
+      <span
+        className="aria-hidden"
+      >
+        Navigate to home
+      </span>
+    </a>
+    <h2>
+      about:blank
+    </h2>
+  </header>
+  <div
+    className="container"
+  >
+    <ul
+      className="list-stripped"
+    >
+      <li
+        className="about:blank"
+      >
+        <a
+          href="about:blank/free-curtains"
+        >
+          <img
+            className="img-rounded img-inline"
+            src="http://placekitten.com/200/300"
+          />
+          <span>
+            <h3>
+              free-curtains
+            </h3>
+            <p>
+              Paragraph text here
+            </p>
+          </span>
+        </a>
+      </li>
+      <li
+        className="about:blank"
+      >
+        <a
+          href="about:blank/listing2"
+        >
+          <img
+            className="img-rounded img-inline"
+            src="http://placekitten.com/200/300"
+          />
+          <span>
+            <h3>
+              listing2
+            </h3>
+            <p>
+              Paragraph text here
+            </p>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`components <function Service(props) {
+    _classCallCheck(this, Service);
+
+    var _this = _possibleConstructorReturn(this, (Service.__proto__ || Object.getPrototypeOf(Service)).call(this, props));
+
+    var loc = window.location.href.split('/');
+    _this.state = {
+      page: loc.slice(-2)[0],
+      service: loc.slice(-1)[0]
+    };
+    return _this;
+  } /> renders correctly 1`] = `
+<div
+  className="about:blank-bg listing service"
+>
+  <header
+    className="home-header compact"
+  >
+    <a
+      className="back-link"
+      href="/"
+    >
+      <span
+        className="arrow arrow-left arrow-sm"
+      />
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-home fa-w-18 "
+        data-icon="home"
+        data-prefix="fas"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <span>
+        <p>
+          Home
+        </p>
+      </span>
+      <span
+        className="aria-hidden"
+      >
+        Navigate to home
+      </span>
+    </a>
+  </header>
+  <div
+    className="about:blank sub-header"
+  >
+    <div
+      className="container"
+    >
+      <img
+        className="img-rounded img-inline"
+        src="http://placekitten.com/200/300"
+      />
+      <header
+        className="about:blank"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-bookmark fa-w-12 "
+          data-icon="bookmark"
+          data-prefix="fas"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 384 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        <h2>
+          about:blank
+        </h2>
+        <p>
+          Wellington Sustainability Trust
+        </p>
+      </header>
+    </div>
+  </div>
+  <div
+    className="container-inner"
+  >
+    <p>
+      <strong>
+        Do you have a cold home and a Community Services Card? Wellington Curtain Bank can help.
+      </strong>
+    </p>
+    <iframe
+      allow="autoplay; encrypted-media"
+      allowfullscreen={true}
+      frameborder="0"
+      src="https://www.youtube.com/embed/GsLB-M5bk00"
+      width="100%"
+    />
+    <p>
+      We offer families who have a Community Services Card free, lined curtains for their living rooms.
+    </p>
+    <p>
+      If there are children, older people or people with health issues in the home, we can also make curtains for bedrooms.
+    </p>
+    <p>
+      Wellington Curtain Bank upcycles good quality curtains donated by the public to fit your windows and help you keep heat in, cold out and power bills down.
+    </p>
+    <p>
+      If you would like to donate your preloved curtains, please read this page for more info.
+    </p>
+  </div>
+</div>
+`;

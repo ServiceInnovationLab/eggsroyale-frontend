@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
@@ -46,21 +45,21 @@ class Listings extends React.Component {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
         <header className={this.renderTheme(this.state.page)}>
-          <Link to="/" className="back-link"><span className="arrow arrow-left"></span><span className="aria-hidden">Navigate to home</span></Link>
+          <a href="/" className="back-link"><span className="arrow arrow-left"></span><span className="aria-hidden">Navigate to home</span></a>
           <FontAwesomeIcon icon={this.renderIcon(this.state.page)} />
           <h2>{this.state.page}</h2>
         </header>
         <div className="container">
           <ul className="list-stripped">
             {
-              ['free-curtains', 'listing2'].map(item => {
-                return <li className={`${this.renderTheme(this.state.page)}`}>
-                  <Link to={`${this.state.page}/${item}`}><img className="img-rounded img-inline" src="http://placekitten.com/200/300" />
+              ['free-curtains', 'listing2'].map((item, key) => {
+                return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
+                  <a href={`${this.state.page}/${item}`}><img className="img-rounded img-inline" src="http://placekitten.com/200/300" />
                     <span>
                       <h3>{item}</h3>
                       <p>Paragraph text here</p>
                     </span>
-                  </Link>
+                  </a>
                 </li>;
               })
             }

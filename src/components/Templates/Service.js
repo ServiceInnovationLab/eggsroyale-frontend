@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from '../Image';
-import {Link} from 'react-router-dom';
+import BrowserRouter, {Link} from 'react-router-dom';
 import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
@@ -32,23 +32,13 @@ class Service extends React.Component {
   render() {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
-        <header className={`home-header compact`}>
-          <Link to="/" className="back-link">
-            <span className="arrow arrow-left arrow-sm"></span>
-            <FontAwesomeIcon icon="home" />
-            <span><p>Home</p></span>
-            <span className="aria-hidden">Navigate to home</span></Link>
-        </header>
-        <div className={`${this.renderTheme(this.state.page)} sub-header`}>
-          <div className="container">
-            <Image src="http://placekitten.com/200/300" />
-            <header className={`${this.renderTheme(this.state.page)}`} style={{display: 'inline-block'}}>
-              <FontAwesomeIcon icon="bookmark" />
-              <h2>{this.state.service}</h2>
-              <p>Wellington Sustainability Trust</p>
-            </header>
-          </div>
-        </div>
+        <Header />
+        <Subheader
+          theme={this.renderTheme(this.state.page)}
+          image="http://placekitten.com/200/300"
+          service={this.state.service}
+          serviceDesc={'Wellington Sustainability Trust'}
+        />
         <div className="container-inner">
           <p>
             <strong>Do you have a cold home and a Community Services Card? Wellington Curtain Bank can help.</strong>
@@ -69,5 +59,33 @@ class Service extends React.Component {
     );
   }
 }
+
+const Header = () => {
+  return (
+    <header className="home-header compact">
+      <a href="/" className="back-link">
+        <span className="arrow arrow-left arrow-sm"></span>
+        <FontAwesomeIcon icon="home" />
+        <span><p>Home</p></span>
+        <span className="aria-hidden">Navigate to home</span>
+      </a>
+    </header>
+  );
+};
+
+const Subheader = props => {
+  return (
+    <div className={`${props.theme} sub-header`}>
+      <div className="container">
+        <Image src={props.image} />
+        <header className={props.theme} style={{display: 'inline-block'}}>
+          <FontAwesomeIcon icon="bookmark" />
+          <h2>{props.service}</h2>
+          <p>{props.serviceDesc}</p>
+        </header>
+      </div>
+    </div>
+  );
+};
 
 export default Service;
