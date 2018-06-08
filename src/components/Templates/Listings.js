@@ -41,6 +41,8 @@ class Listings extends React.Component {
       return 'leaf';
     case 'health':
       return 'plus-square';
+    default:
+      return 'home';
     }
   }
   render(){
