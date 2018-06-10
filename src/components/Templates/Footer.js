@@ -6,7 +6,8 @@ import brands from '@fortawesome/fontawesome-free-brands';
 import faLocationArrow from '@fortawesome/fontawesome-free-solid/faLocationArrow';
 import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
 import faBookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
-// import { Link } from 'react-router-dom';
+// import Bookmark from 'react-bookmark';
+import Bookmark from 'react-bookmark';
 
 fontawesome.library.add(brands, faLocationArrow, faSearch, faBookmark);
 

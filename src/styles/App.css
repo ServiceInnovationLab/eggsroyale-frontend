@@ -79,7 +79,8 @@ nav span {
   .list-icons li {
     text-align: center;
     flex-direction: row;
-    width: 33.33%; }
+    width: 33.33%;
+    padding-top: 16px; }
 
 .list-stripped {
   list-style: none;
@@ -91,7 +92,8 @@ nav span {
   width: 50px; }
 
 .img-inline {
-  display: inline-block; }
+  display: inline-block;
+  float: left; }
 
 .listing {
   overflow: auto; }
@@ -103,11 +105,12 @@ nav span {
     margin-bottom: 15px; }
     .listing li a {
       display: block;
-      padding: 10px; }
+      padding: 10px;
+      overflow: auto; }
   .listing span {
     display: inline-block;
     vertical-align: top;
-    margin-left: 20px; }
+    margin-left: 10px; }
     .listing span h3,
     .listing span p {
       margin: 0; }
@@ -121,6 +124,9 @@ nav span {
     font-size: 40px;
     position: relative;
     top: 15px; }
+  .listing .listing-details {
+    float: left;
+    width: 220px; }
 
 .back-link {
   position: relative; }
