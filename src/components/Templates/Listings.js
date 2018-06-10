@@ -59,7 +59,7 @@ class Listings extends React.Component {
             {
               ['free-curtains', 'listing2'].map((item, key) => {
                 return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
-                  <a href={`${this.state.page}/${item}`}>
+                  <a href={`#/${this.state.page}/${item}`}>
                     <Image src="http://placekitten.com/200/300" alt="kitten" />
                     <span>
                       <h3>{item}</h3>
