@@ -83,7 +83,7 @@ nav {
     position: relative;
   }
 
-  svg {
+  ul:not(.list-icons) svg {
     font-size: 50px !important;
     position: absolute;
     top: 10px;
@@ -92,6 +92,22 @@ nav {
   span {
     display: inline-block;
     margin-left: 90px;
+  }
+}
+
+.list-icons {
+  display: flex;
+
+  svg {
+    font-size: 50px !important;
+    color: white;
+    height: 34px;
+  }
+
+  li {
+    text-align: center;
+    flex-direction: row;
+    width: 33.33%;
   }
 }
 

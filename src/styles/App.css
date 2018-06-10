@@ -62,13 +62,24 @@ nav a {
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   position: relative; }
-nav svg {
+nav ul:not(.list-icons) svg {
   font-size: 50px !important;
   position: absolute;
   top: 10px; }
 nav span {
   display: inline-block;
   margin-left: 90px; }
+
+.list-icons {
+  display: flex; }
+  .list-icons svg {
+    font-size: 50px !important;
+    color: white;
+    height: 34px; }
+  .list-icons li {
+    text-align: center;
+    flex-direction: row;
+    width: 33.33%; }
 
 .list-stripped {
   list-style: none;
