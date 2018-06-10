@@ -27,30 +27,63 @@ class Listings extends React.Component {
     this.loadFilters = this.loadFilters.bind(this);
   }
 
+  getCategory(cat) {
+    // Basic Needs
+    // Family / Whanau Services
+    // Health
+    // Child Care
+    // Parents and Caregivers
+    switch(cat) {
+    case 'home':
+      return 'Family / Whanau Services, Child Care, Parents and Caregivers';
+    case 'health':
+      return 'Health';
+    case 'food':
+      return '';
+    case 'activities':
+      return '';
+    case 'wellbeing':
+      return 'Basic Needs';
+    default:
+      return '';
+    }
+  }
+
   loadFilters(){
     const GLOBAL_FILTER = 'community services card';
     const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
     const API_PATH = process.env.REACT_APP_API_PATH;
-
+    const CATEGORY = this.getCategory(this.state.page);
     let fields = '*';
+
     let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
-      OR "SERVICE_TARGET_AUDIENCES" LIKE '%${GLOBAL_FILTER}%'
-      OR "COST_DESCRIPTION" LIKE '%${GLOBAL_FILTER}%'
-      OR "DELIVERY_METHODS" LIKE '%${GLOBAL_FILTER}%'`;
-  
-    let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${where}`;
+    AND "LEVEL_1_CATEGORY" = '${CATEGORY}'
+    `;
+    let whereArray = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
+    &&|| "LEVEL_1_CATEGORY" = '${CATEGORY.split(',')[0]}'
+    &&|| "LEVEL_1_CATEGORY" = '${CATEGORY.split(',')[1]}'
+    &&|| "LEVEL_1_CATEGORY" = '${CATEGORY.split(',')[2]}'
+    `;
+    // alert(CATEGORY.split(',')[0])
+
+    let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${CATEGORY.length > 1 ? whereArray : where}`;
     sql =  encodeURI(sql);
     let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
     return axios.get(url).then((response)=>{
-      // dispatch(showFilters(response.data.result.records));
-      console.log('in action', response.data.result.records)
-      this.setState({results: response.data.result.records})
+      this.setState({results: response.data.result.records});
     });
   }
-
+    // let fields = '"LEVEL_1_CATEGORY" as name, COUNT(*) as num';
+    // let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
+    //   OR "SERVICE_TARGET_AUDIENCES" LIKE '%${GLOBAL_FILTER}%'
+    //   OR "COST_DESCRIPTION" LIKE '%${GLOBAL_FILTER}%'
+    //   OR "DELIVERY_METHODS" LIKE '%${GLOBAL_FILTER}%'`;
+  
+    // let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${where} GROUP BY name ORDER BY name`;
   componentDidMount() {
-    return this.loadFilters()
+    return this.loadFilters();
   }
+
   renderTheme(state) {
     switch(state) {
     case state:
@@ -90,12 +123,27 @@ class Listings extends React.Component {
       return str;
     }
   }
-  
+  onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+    console.log('value.FSD_ID',value.FSD_ID)
+    console.log('index',index)
+    console.log('self',self)
+    console.log('selfdd',self.indexOf(value))
+}
   render(){
     document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
     
     const { match: { params: { name } } , result } = this.props;
-    console.log('result', this.state.results)
+    // console.log('result', this.state.results)
+    const resArr = [];
+    this.state.results.filter(function(item){
+      const i = resArr.findIndex(x => x.FSD_ID == item.FSD_ID);
+      if(i <= -1){
+        resArr.push({PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
+      }
+      return null;
+    });
+    // {console.log(data)}
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
         <header className={this.renderTheme(this.state.page)}>
@@ -106,9 +154,9 @@ class Listings extends React.Component {
         <div className="container">
           <ul className="list-stripped">
             {
-              this.state.results.map((item, key) => {
+              resArr.map((item, key) => {
                 return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
-                  <a href={`#/${this.state.page}/`}>
+                  <a href={`#/${this.state.page}/${item.FSD_ID}`}>
                     <Image src="http://placekitten.com/200/300" alt="kitten" />
                     <span className="listing-details">
                       <h3>{item.PROVIDER_NAME}</h3>

@@ -8,6 +8,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import bookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
+import axios from 'axios';
 fontawesome.library.add(brands, home, health, activities, food, bookmark);
 
 class Service extends React.Component {
@@ -17,8 +18,28 @@ class Service extends React.Component {
     const loc = window.location.href.split('/');
     this.state = {
       page: loc.slice(-2)[0],
-      service: loc.slice(-1)[0]
+      service: loc.slice(-1)[0],
+      results: []
     };
+  }
+
+  loadService(){
+    // const GLOBAL_FILTER = 'community services card';
+    const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
+    const API_PATH = process.env.REACT_APP_API_PATH;
+    // const CATEGORY = this.getCategory(this.state.page);
+    let fields = '*';
+
+    let where = `WHERE "FSD_ID" = '${this.state.service}'`;
+
+    // alert(CATEGORY.split(',')[0])
+
+    let sql =`SELECT DISTINCT ${fields} FROM "${RESOURCE_ID}" ${where} LIMIT 1`;
+    sql =  encodeURI(sql);
+    let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
+    return axios.get(url).then((response)=>{
+      this.setState({results: response.data.result.records[0]});
+    });
   }
 
   renderTheme(state) {
@@ -29,32 +50,28 @@ class Service extends React.Component {
       return 'home';
     }
   }
-
+  componentDidMount() {
+    return this.loadService();
+  }
   render() {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
         <Header />
+        {console.log(this.state.results)}
         <Subheader
           theme={this.renderTheme(this.state.page)}
           image="http://placekitten.com/200/300"
-          service={this.state.service}
-          serviceDesc={'Wellington Sustainability Trust'}
+          service={this.state.results.PROVIDER_NAME}
+          serviceDesc={this.state.results.SERVICE_DETAIL}
         />
         <div className="container-inner">
-          <p>
-            <strong>Do you have a cold home and a Community Services Card? Wellington Curtain Bank can help.</strong>
-          </p>
-          <iframe width="100%" src="https://www.youtube.com/embed/GsLB-M5bk00" frameborder="0" title="video-example" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-          <p>
-          We offer families who have a Community Services Card free, lined curtains for their living rooms.</p>
-
-          <p>If there are children, older people or people with health issues in the home, we can also make curtains for bedrooms.</p>
-
-          <p>Wellington Curtain Bank upcycles good quality curtains donated by the public to fit your windows and help you keep heat in, cold out and power bills down.</p>
-
-          <p>If you would like to donate your preloved curtains, please read this page for more info.
-          </p>
+          <p>{this.state.results.ORGANISATION_PURPOSE}</p>
+          {/* <p>{this.state.results.ORGANISATION_PURPOSE}</p> */}
+          <p>{this.state.results.PROVIDER_CONTACT_AVAILABILITY}</p>
+          <p>{this.state.results.PHYSICAL_ADDRESS}</p>
+          <p>{this.state.results.PHYSICAL_DISTRICT}</p>
+          <p>{this.state.results.PHYSICAL_REGION}</p>
+          <p>{this.state.results.POSTAL_ADDRESS}</p>
         </div>
       </div>
     );

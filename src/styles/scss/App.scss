@@ -131,7 +131,9 @@ nav {
 
 .listing {
   overflow: auto;
-
+  ul {
+    padding-bottom: 70px;
+  }
   h2 {
     color: #fff;
     text-transform: capitalize;
@@ -140,17 +142,22 @@ nav {
   li {
     border-radius: 18px;
     margin-bottom: 15px;
+    position: relative;
+
     a {
       display: block;
       padding: 10px;
       overflow: auto;
+    }
+    img {
+      position: absolute;
     }
   }
 
   span {
     display: inline-block;
     vertical-align: top;
-    margin-left: 10px;
+    margin-left: 60px;
 
     h3,
     p { margin: 0; }
@@ -163,10 +170,6 @@ nav {
     font-size: 40px;
     position: relative;
     top: 15px;
-  }
-  .listing-details {
-    float: left;
-    width: 220px;
   }
 }
 
@@ -207,10 +210,11 @@ span.arrow {
   text-align: center;
   padding: 20px 0;
   box-shadow: 0 2px 20px rgba(#000, .5);
+  
   img {
-    height: 65px;
-    width: 65px;
-    margin-right: 10px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
   }
 
   svg {
@@ -223,6 +227,10 @@ span.arrow {
   header {
     text-align: left;
     vertical-align: top;
+    margin-left: 85px;
+    @media (min-width: 425px) {
+      margin-right: 85px;
+    }
   }
 
   h2 {
@@ -232,10 +240,10 @@ span.arrow {
   p {
     font-size: 15px;
     color: rgba(white, .7);
+    // margin-right: 100px;
   }
 
-  h2,
-  p {
+  h2 {
     margin: 0;
   }
 }

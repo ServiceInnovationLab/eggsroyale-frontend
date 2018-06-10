@@ -97,20 +97,25 @@ nav span {
 
 .listing {
   overflow: auto; }
+  .listing ul {
+    padding-bottom: 70px; }
   .listing h2 {
     color: #fff;
     text-transform: capitalize; }
   .listing li {
     border-radius: 18px;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    position: relative; }
     .listing li a {
       display: block;
       padding: 10px;
       overflow: auto; }
+    .listing li img {
+      position: absolute; }
   .listing span {
     display: inline-block;
     vertical-align: top;
-    margin-left: 10px; }
+    margin-left: 60px; }
     .listing span h3,
     .listing span p {
       margin: 0; }
@@ -124,9 +129,6 @@ nav span {
     font-size: 40px;
     position: relative;
     top: 15px; }
-  .listing .listing-details {
-    float: left;
-    width: 220px; }
 
 .back-link {
   position: relative; }
@@ -159,9 +161,9 @@ span.arrow {
   padding: 20px 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5); }
   .sub-header img {
-    height: 65px;
-    width: 65px;
-    margin-right: 10px; }
+    position: absolute;
+    left: 20px;
+    top: 10px; }
   .sub-header svg {
     position: absolute;
     right: 14px;
@@ -169,14 +171,17 @@ span.arrow {
     height: 31px; }
   .sub-header header {
     text-align: left;
-    vertical-align: top; }
+    vertical-align: top;
+    margin-left: 85px; }
+    @media (min-width: 425px) {
+      .sub-header header {
+        margin-right: 85px; } }
   .sub-header h2 {
     font-size: 20px; }
   .sub-header p {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.7); }
-  .sub-header h2,
-  .sub-header p {
+  .sub-header h2 {
     margin: 0; }
 
 .service .container-inner {
