@@ -50,7 +50,8 @@ body {
 
 .container {
   margin: 0 10px;
-  position: relative; }
+  position: relative;
+  overflow: auto; }
 
 nav a {
   text-decoration: none;
