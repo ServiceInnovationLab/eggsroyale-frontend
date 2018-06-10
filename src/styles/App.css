@@ -88,8 +88,10 @@ nav span {
   text-transform: capitalize; }
 .listing li {
   border-radius: 18px;
-  padding: 10px;
   margin-bottom: 15px; }
+  .listing li a {
+    display: block;
+    padding: 10px; }
 .listing span {
   display: inline-block;
   vertical-align: top;
