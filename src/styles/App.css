@@ -10,7 +10,6 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #656f7d; }
@@ -50,8 +49,7 @@ body {
 
 .container {
   margin: 0 10px;
-  position: relative;
-  overflow: auto; }
+  position: relative; }
 
 nav a {
   text-decoration: none;
@@ -84,32 +82,34 @@ nav span {
 .img-inline {
   display: inline-block; }
 
-.listing h2 {
-  color: #fff;
-  text-transform: capitalize; }
-.listing li {
-  border-radius: 18px;
-  margin-bottom: 15px; }
-  .listing li a {
-    display: block;
-    padding: 10px; }
-.listing span {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 20px; }
-  .listing span h3,
-  .listing span p {
-    margin: 0; }
-  .listing span h3 {
+.listing {
+  overflow: auto; }
+  .listing h2 {
     color: #fff;
-    margin-bottom: 5px; }
-  .listing span p {
-    color: rgba(255, 255, 255, 0.7); }
-.listing svg {
-  color: white;
-  font-size: 40px;
-  position: relative;
-  top: 15px; }
+    text-transform: capitalize; }
+  .listing li {
+    border-radius: 18px;
+    margin-bottom: 15px; }
+    .listing li a {
+      display: block;
+      padding: 10px; }
+  .listing span {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px; }
+    .listing span h3,
+    .listing span p {
+      margin: 0; }
+    .listing span h3 {
+      color: #fff;
+      margin-bottom: 5px; }
+    .listing span p {
+      color: rgba(255, 255, 255, 0.7); }
+  .listing svg {
+    color: white;
+    font-size: 40px;
+    position: relative;
+    top: 15px; }
 
 .back-link {
   position: relative; }
@@ -163,7 +163,8 @@ span.arrow {
     margin: 0; }
 
 .service .container-inner {
-  margin: 0 40px; }
+  margin: 0 40px;
+  height: 100%; }
 .service p,
 .service strong {
   color: white;
