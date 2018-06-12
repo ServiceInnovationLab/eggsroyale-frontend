@@ -1,15 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components <function Listings(props) {
-    _classCallCheck(this, Listings);
+exports[`components <function Connect(props, context) {
+        _classCallCheck(this, Connect);
 
-    var _this = _possibleConstructorReturn(this, (Listings.__proto__ || Object.getPrototypeOf(Listings)).call(this, props));
+        var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
 
-    _this.state = {
-      page: window.location.href.split('/').slice(-1)[0]
-    };
-    return _this;
-  } /> renders correctly 1`] = `
+        _this.version = version;
+        _this.state = {};
+        _this.renderCount = 0;
+        _this.store = props[storeKey] || context[storeKey];
+        _this.propsMode = Boolean(props[storeKey]);
+        _this.setWrappedInstance = _this.setWrappedInstance.bind(_this);
+
+        (0, _invariant2.default)(_this.store, 'Could not find "' + storeKey + '" in either the context or props of ' + ('"' + displayName + '". Either wrap the root component in a <Provider>, ') + ('or explicitly pass "' + storeKey + '" as a prop to "' + displayName + '".'));
+
+        _this.initSelector();
+        _this.initSubscription();
+        return _this;
+      } /> renders correctly 1`] = `
 <div
   className="about:blank-bg listing"
 >
@@ -54,50 +62,7 @@ exports[`components <function Listings(props) {
   >
     <ul
       className="list-stripped"
-    >
-      <li
-        className="about:blank"
-      >
-        <a
-          href="about:blank/free-curtains"
-        >
-          <img
-            alt="kitten"
-            className="img-rounded img-inline"
-            src="http://placekitten.com/200/300"
-          />
-          <span>
-            <h3>
-              free-curtains
-            </h3>
-            <p>
-              Paragraph text here
-            </p>
-          </span>
-        </a>
-      </li>
-      <li
-        className="about:blank"
-      >
-        <a
-          href="about:blank/listing2"
-        >
-          <img
-            alt="kitten"
-            className="img-rounded img-inline"
-            src="http://placekitten.com/200/300"
-          />
-          <span>
-            <h3>
-              listing2
-            </h3>
-            <p>
-              Paragraph text here
-            </p>
-          </span>
-        </a>
-      </li>
-    </ul>
+    />
   </div>
 </div>
 `;
@@ -110,7 +75,8 @@ exports[`components <function Service(props) {
     var loc = window.location.href.split('/');
     _this.state = {
       page: loc.slice(-2)[0],
-      service: loc.slice(-1)[0]
+      service: loc.slice(-1)[0],
+      results: []
     };
     return _this;
   } /> renders correctly 1`] = `
@@ -189,43 +155,20 @@ exports[`components <function Service(props) {
             style={Object {}}
           />
         </svg>
-        <h2>
-          about:blank
-        </h2>
-        <p>
-          Wellington Sustainability Trust
-        </p>
+        <h2 />
+        <p />
       </header>
     </div>
   </div>
   <div
     className="container-inner"
   >
-    <p>
-      <strong>
-        Do you have a cold home and a Community Services Card? Wellington Curtain Bank can help.
-      </strong>
-    </p>
-    <iframe
-      allow="autoplay; encrypted-media"
-      allowfullscreen={true}
-      frameborder="0"
-      src="https://www.youtube.com/embed/GsLB-M5bk00"
-      title="video-example"
-      width="100%"
-    />
-    <p>
-      We offer families who have a Community Services Card free, lined curtains for their living rooms.
-    </p>
-    <p>
-      If there are children, older people or people with health issues in the home, we can also make curtains for bedrooms.
-    </p>
-    <p>
-      Wellington Curtain Bank upcycles good quality curtains donated by the public to fit your windows and help you keep heat in, cold out and power bills down.
-    </p>
-    <p>
-      If you would like to donate your preloved curtains, please read this page for more info.
-    </p>
+    <p />
+    <p />
+    <p />
+    <p />
+    <p />
+    <p />
   </div>
 </div>
 `;
