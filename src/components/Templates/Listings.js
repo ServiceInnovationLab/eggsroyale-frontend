@@ -123,27 +123,23 @@ class Listings extends React.Component {
       return str;
     }
   }
+
   onlyUnique(value, index, self) { 
-    return self.indexOf(value) === index;
-    console.log('value.FSD_ID',value.FSD_ID)
-    console.log('index',index)
-    console.log('self',self)
-    console.log('selfdd',self.indexOf(value))
-}
+    const unique = self.indexOf(value) === index;
+    return unique;
+  }
+
   render(){
     document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
     
-    const { match: { params: { name } } , result } = this.props;
-    // console.log('result', this.state.results)
     const resArr = [];
     this.state.results.filter(function(item){
-      const i = resArr.findIndex(x => x.FSD_ID == item.FSD_ID);
+      const i = resArr.findIndex(x => x.FSD_ID === item.FSD_ID);
       if(i <= -1){
         resArr.push({PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
       }
       return null;
     });
-    // {console.log(data)}
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
         <header className={this.renderTheme(this.state.page)}>

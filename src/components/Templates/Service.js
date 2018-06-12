@@ -57,7 +57,6 @@ class Service extends React.Component {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
         <Header />
-        {console.log(this.state.results)}
         <Subheader
           theme={this.renderTheme(this.state.page)}
           image="http://placekitten.com/200/300"
@@ -66,7 +65,6 @@ class Service extends React.Component {
         />
         <div className="container-inner">
           <p>{this.state.results.ORGANISATION_PURPOSE}</p>
-          {/* <p>{this.state.results.ORGANISATION_PURPOSE}</p> */}
           <p>{this.state.results.PROVIDER_CONTACT_AVAILABILITY}</p>
           <p>{this.state.results.PHYSICAL_ADDRESS}</p>
           <p>{this.state.results.PHYSICAL_DISTRICT}</p>

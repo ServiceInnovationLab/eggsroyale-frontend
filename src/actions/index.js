@@ -72,7 +72,6 @@ function requestBuilder(searchVars){
   let q = (searchVars.keyword && searchVars.keyword.length > 2) ? searchVars.keyword : '';
   let theq = `&q=${q} ${GLOBAL_FILTER}`;
   let url = encodeURI(`${API_PATH}datastore_search?resource_id=${RESOURCE_ID}&fields=${STATICFIELDS}${theq}&distinct=true${filters(searchVars.category)}`);
-  console.log(url);
   if(searchVars.addressLatLng.latitude) url += '&limit=5000';
   return url;
 }

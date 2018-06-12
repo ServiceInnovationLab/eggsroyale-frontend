@@ -6,7 +6,6 @@ import '../styles/App.css';
 class AppCon extends Component {
   
   render() {
-    // console.log('filters', this.props.loadResults('health'))
     return (
       <div>
         <main>

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actionCreators from '../actions/index';
-import MapResults from './Map/MapResults';
-import AddressFinder from './Forms/AddressFinder';
-import LazyLoad from 'react-lazyload';
-import Filters from './Service/Filters';
-import Service from '../components/Service/Service';
-import Sharebar from '../components/Social/Sharebar';
+// import MapResults from './Map/MapResults';
+// import AddressFinder from './Forms/AddressFinder';
+// import LazyLoad from 'react-lazyload';
+// import Filters from './Service/Filters';
+// import Service from '../components/Service/Service';
+// import Sharebar from '../components/Social/Sharebar';
 import '../styles/Nav.css';
 import '../styles/Form.css';
-import Proximity from './Forms/Proximity';
+// import Proximity from './Forms/Proximity';
 import { Link } from 'react-router-dom';
 
 import fontawesome from '@fortawesome/fontawesome';
@@ -25,7 +25,7 @@ import faLeaf from '@fortawesome/fontawesome-free-solid/faLeaf';
 
 fontawesome.library.add(brands, faHome, faPlusSquare, faCoffee, faFutbol, faLeaf);
 
-let inputchanged = false;
+// let inputchanged = false;
 
 class App extends Component {
 
