@@ -51,7 +51,7 @@ body {
   margin: 0 10px;
   position: relative; }
 
-nav a {
+nav ul:not(.list-icons) a {
   text-decoration: none;
   display: block;
   color: #fff;
