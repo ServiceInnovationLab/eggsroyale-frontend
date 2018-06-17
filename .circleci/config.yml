@@ -8,7 +8,7 @@ jobs:
   test:
     docker:
       # specify the version you desire here
-      - image: circleci/node:9.11@sha256:9f66f38ec644a46b4a9df0fcd28745ac9d85190b43badc16aff108b90e8d4fdf
+      - image: circleci/node:9.11@sha256:028653b833cbe7f2fbb10abd4a7622422f7c6ba8c8b9be0894aff488ebddce49
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -38,7 +38,7 @@ jobs:
 
   build:
     docker:
-      - image: circleci/node:9.11@sha256:9f66f38ec644a46b4a9df0fcd28745ac9d85190b43badc16aff108b90e8d4fdf
+      - image: circleci/node:9.11@sha256:028653b833cbe7f2fbb10abd4a7622422f7c6ba8c8b9be0894aff488ebddce49
     steps:
       - checkout
       - run: npm install
@@ -58,7 +58,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:9.11@sha256:9f66f38ec644a46b4a9df0fcd28745ac9d85190b43badc16aff108b90e8d4fdf
+      - image: circleci/node:9.11@sha256:028653b833cbe7f2fbb10abd4a7622422f7c6ba8c8b9be0894aff488ebddce49
     steps:
       - checkout
       - run: npm install
