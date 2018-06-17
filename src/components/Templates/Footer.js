@@ -11,15 +11,29 @@ fontawesome.library.add(brands, faLocationArrow, faSearch, faBookmark);
 
 class Footer extends React.Component {
 
+  bookmark() {
+    const location = window.location.href;
+    const currentArr = localStorage.getItem("names");
+    if(currentArr !== null) {
+      const newArr = currentArr.split(',');
+      newArr.push(location);
+      if(newArr.includes(location)) {
+        localStorage.setItem("names", newArr);
+      }
+    } else {
+      localStorage.setItem("names", location);
+    }
+  }
   render(){
     return (
       <div className="footer" aria-label="Footer" role="contentinfo">
         <div className="container">
           <nav>
+            {/* {console.log('cookies', document.cookie)} */}
             <ul className="list-stripped list-inline list-icons">
               <li><a href={window.location.href+'map'}><FontAwesomeIcon icon="location-arrow" /></a></li>
               <li><FontAwesomeIcon icon="search" /></li>
-              <li><FontAwesomeIcon icon="bookmark" /></li>
+              <li><span onClick={()=>this.bookmark()}><FontAwesomeIcon icon="bookmark" /></span></li>
             </ul>
           </nav>
         </div>
