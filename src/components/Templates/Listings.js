@@ -13,6 +13,9 @@ import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
 import axios from 'axios';
 // import { connect } from 'react-redux';
 // import * as actionCreators from '../actions/index';
+
+import * as services from '../../csv.json';
+
 fontawesome.library.add(brands, home, health, activities, food, wellbeing);
 class Listings extends React.Component {
 
@@ -78,7 +81,7 @@ class Listings extends React.Component {
     //   OR "SERVICE_TARGET_AUDIENCES" LIKE '%${GLOBAL_FILTER}%'
     //   OR "COST_DESCRIPTION" LIKE '%${GLOBAL_FILTER}%'
     //   OR "DELIVERY_METHODS" LIKE '%${GLOBAL_FILTER}%'`;
-  
+
     // let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${where} GROUP BY name ORDER BY name`;
   componentDidMount() {
     return this.loadFilters();
@@ -124,22 +127,31 @@ class Listings extends React.Component {
     }
   }
 
-  onlyUnique(value, index, self) { 
+  onlyUnique(value, index, self) {
     const unique = self.indexOf(value) === index;
     return unique;
   }
 
-  render(){
-    document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
-    
+  mergeData(services, results) {
     const resArr = [];
-    this.state.results.filter(function(item){
+    const result = services.map((el, i) => {
+      var o = Object.assign({}, el);
+      o.FSD_ID = `0000${i+1}`;
+      return o;
+    });
+    Array.prototype.push.apply(result, results);
+    result.filter(function(item){
       const i = resArr.findIndex(x => x.FSD_ID === item.FSD_ID);
       if(i <= -1){
-        resArr.push({PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
+        resArr.push({SERVICE_NAME: item.SERVICE_NAME, PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
       }
       return null;
     });
+
+    return resArr;
+  }
+  render(){
+    document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
         <header className={this.renderTheme(this.state.page)}>
@@ -150,12 +162,13 @@ class Listings extends React.Component {
         <div className="container">
           <ul className="list-stripped">
             {
-              resArr.map((item, key) => {
+              this.mergeData(services, this.state.results).map((item, key) => {
                 return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
                   <a href={`#/${this.state.page}/${item.FSD_ID}`}>
                     <Image src="http://placekitten.com/200/300" alt="kitten" />
                     <span className="listing-details">
-                      <h3>{item.PROVIDER_NAME}</h3>
+                      <h3>{item.SERVICE_NAME}</h3>
+                      <h4 style={{color: 'white'}}>{item.SERVICE_PROVIDER}</h4>
                       <p>{this.text_truncate(item.SERVICE_DETAIL)}</p>
                     </span>
                   </a>
