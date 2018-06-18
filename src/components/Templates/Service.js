@@ -57,20 +57,21 @@ class Service extends React.Component {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
         <Header />
-        <Subheader
+        {console.log(this.props)}
+        {/* <Subheader
           theme={this.renderTheme(this.state.page)}
           image="http://placekitten.com/200/300"
           service={this.state.results.PROVIDER_NAME}
           serviceDesc={this.state.results.SERVICE_DETAIL}
-        />
-        <div className="container-inner">
+        /> */}
+        {/* <div className="container-inner">
           <p>{this.state.results.ORGANISATION_PURPOSE}</p>
           <p>{this.state.results.PROVIDER_CONTACT_AVAILABILITY}</p>
           <p>{this.state.results.PHYSICAL_ADDRESS}</p>
           <p>{this.state.results.PHYSICAL_DISTRICT}</p>
           <p>{this.state.results.PHYSICAL_REGION}</p>
           <p>{this.state.results.POSTAL_ADDRESS}</p>
-        </div>
+        </div> */}
       </div>
     );
   }
