@@ -5,8 +5,16 @@
 .list-inline {
   display: inline-block; }
 
-.list-icon {
-  margin-bottom: 7px; }
+.list-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  text-align: center;
+  margin-top: 0; }
+  .list-icons li {
+    width: 40%;
+    height: 40%;
+    color: white; }
 
 .selected {
   background: #35a744;

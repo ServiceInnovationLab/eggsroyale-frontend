@@ -3,28 +3,28 @@ import geolib from 'geolib';
 
 const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
 const API_PATH = process.env.REACT_APP_API_PATH;
-const GLOBAL_FILTER="community services card";
+const GLOBAL_FILTER = "community services card";
 
 let filters = category => category ? `&filters={"LEVEL_1_CATEGORY":"${category}"}` : '';
 const STATICFIELDS = 'FSD_ID,PROVIDER_CLASSIFICATION,LONGITUDE,LATITUDE,PROVIDER_NAME,PUBLISHED_CONTACT_EMAIL_1,PUBLISHED_PHONE_1,PROVIDER_CONTACT_AVAILABILITY,ORGANISATION_PURPOSE,PHYSICAL_ADDRESS,PROVIDER_WEBSITE_1';
 
-export function loadFilters(){
-  let fields = '"LEVEL_1_CATEGORY" as name, COUNT(*) as num';
-  let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
-    OR "SERVICE_TARGET_AUDIENCES" LIKE '%${GLOBAL_FILTER}%'
-    OR "COST_DESCRIPTION" LIKE '%${GLOBAL_FILTER}%'
-    OR "DELIVERY_METHODS" LIKE '%${GLOBAL_FILTER}%'`;
+// export function loadFilters(){
+//   let fields = '*';
+//   let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
+//     OR "SERVICE_TARGET_AUDIENCES" LIKE '%${GLOBAL_FILTER}%'
+//     OR "COST_DESCRIPTION" LIKE '%${GLOBAL_FILTER}%'
+//     OR "DELIVERY_METHODS" LIKE '%${GLOBAL_FILTER}%'`;
 
-  let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${where} GROUP BY name ORDER BY name`;
-  console.log(sql);
-  sql =  encodeURI(sql);
-  let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
-  return (dispatch) => {
-    return axios.get(url).then((response)=>{
-      dispatch(showFilters(response.data.result.records));
-    });
-  };
-}
+//   let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${where}`;
+//   sql =  encodeURI(sql);
+//   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
+//   return (dispatch) => {
+//     return axios.get(url).then((response)=>{
+//       dispatch(showFilters(response.data.result.records));
+//       console.log('in action', response.data.result.records)
+//     });
+//   };
+// }
 
 /* category, keyword, addressLatLng, radius = 50000 */
 export function loadResults(searchVars) {
@@ -72,7 +72,6 @@ function requestBuilder(searchVars){
   let q = (searchVars.keyword && searchVars.keyword.length > 2) ? searchVars.keyword : '';
   let theq = `&q=${q} ${GLOBAL_FILTER}`;
   let url = encodeURI(`${API_PATH}datastore_search?resource_id=${RESOURCE_ID}&fields=${STATICFIELDS}${theq}&distinct=true${filters(searchVars.category)}`);
-  console.log(url);
   if(searchVars.addressLatLng.latitude) url += '&limit=5000';
   return url;
 }
