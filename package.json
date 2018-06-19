@@ -1,6 +1,7 @@
 {
   "name": "eggsroyale",
   "homepage": "https://ServiceInnovationLab.github.io/eggsroyale-frontend",
+  "license": "MIT",
   "version": "0.1.0",
   "private": false,
   "repository": "git@github.com:ServiceInnovationLab/eggsroyale-frontend.git",
