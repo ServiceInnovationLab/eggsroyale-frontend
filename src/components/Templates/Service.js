@@ -55,20 +55,23 @@ class Service extends React.Component {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
         <Header />
-        <Subheader
-          theme={this.renderTheme(this.state.page)}
-          image="http://placekitten.com/200/300"
-          service={data.PROVIDER_NAME}
-          serviceDesc={data.SERVICE_DETAIL}
-        />
-        <div className="container-inner">
-          <p>{data.ORGANISATION_PURPOSE}</p>
-          <p>{data.PROVIDER_CONTACT_AVAILABILITY}</p>
-          <p>{data.PHYSICAL_ADDRESS}</p>
-          <p>{data.PHYSICAL_DISTRICT}</p>
-          <p>{data.PHYSICAL_REGION}</p>
-          <p>{data.POSTAL_ADDRESS}</p>
+        {data !== undefined && <div>
+          <Subheader
+            theme={this.renderTheme(this.state.page)}
+            image="http://placekitten.com/200/300"
+            service={data.PROVIDER_NAME}
+            serviceDesc={data.SERVICE_DETAIL}
+          />
+          <div className="container-inner">
+            <p>{data.ORGANISATION_PURPOSE}</p>
+            <p>{data.PROVIDER_CONTACT_AVAILABILITY}</p>
+            <p>{data.PHYSICAL_ADDRESS}</p>
+            <p>{data.PHYSICAL_DISTRICT}</p>
+            <p>{data.PHYSICAL_REGION}</p>
+            <p>{data.POSTAL_ADDRESS}</p>
+          </div>
         </div>
+        }
       </div>
     );
   }

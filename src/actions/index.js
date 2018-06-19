@@ -90,13 +90,15 @@ export function loadResults(searchVars) {
   }
 }
 
-export function mergeData(services, results) {
+export function mergeData(data, results) {
   const resArr = [];
+  const services = Array.prototype.slice.call(data);
   const result = services.map((el, i) => {
     const o = Object.assign({}, el);
     o.FSD_ID = `0000${i+1}`;
     return o;
   });
+
   Array.prototype.push.apply(result, results);
   result.filter(function(item){
     const i = resArr.findIndex(x => x.FSD_ID === item.FSD_ID);
