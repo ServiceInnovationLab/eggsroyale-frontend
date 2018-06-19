@@ -8,6 +8,48 @@ const GLOBAL_FILTER = "community services card";
 let filters = category => category ? `&filters={"LEVEL_1_CATEGORY":"${category}"}` : '';
 const STATICFIELDS = 'FSD_ID,PROVIDER_CLASSIFICATION,LONGITUDE,LATITUDE,PROVIDER_NAME,PUBLISHED_CONTACT_EMAIL_1,PUBLISHED_PHONE_1,PROVIDER_CONTACT_AVAILABILITY,ORGANISATION_PURPOSE,PHYSICAL_ADDRESS,PROVIDER_WEBSITE_1';
 
+export function loadData(page){
+  const GLOBAL_FILTER = 'community services card';
+  const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
+  const API_PATH = process.env.REACT_APP_API_PATH;
+  const CATEGORY = getCategory(page);
+  let fields = '*';
+  console.log('CATEGORY', CATEGORY)
+  let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
+  AND "LEVEL_1_CATEGORY" = '${CATEGORY}'
+  `;
+  let whereArray = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
+  &&|| "LEVEL_1_CATEGORY" = '${CATEGORY.split(',')[0]}'
+  &&|| "LEVEL_1_CATEGORY" = '${CATEGORY.split(',')[1]}'
+  &&|| "LEVEL_1_CATEGORY" = '${CATEGORY.split(',')[2]}'
+  `;
+
+  let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${CATEGORY.length > 1 ? whereArray : where}`;
+  sql =  encodeURI(sql);
+  let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
+  return axios.get(url).then((response)=>{
+    return response.data.result.records;
+  });
+}
+
+function getCategory(cat) {
+  switch(cat) {
+  case 'home':
+    return '*';
+  case 'health':
+    return 'Health';
+  case 'food':
+    return '';
+  case 'activities':
+    return '';
+  case 'wellbeing':
+    return 'Basic Needs';
+  default:
+    return '';
+  }
+}
+
+
 // export function loadFilters(){
 //   let fields = '*';
 //   let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
@@ -46,6 +88,25 @@ export function loadResults(searchVars) {
       });
     };
   }
+}
+
+export function mergeData(services, results) {
+  const resArr = [];
+  const result = services.map((el, i) => {
+    const o = Object.assign({}, el);
+    o.FSD_ID = `0000${i+1}`;
+    return o;
+  });
+  Array.prototype.push.apply(result, results);
+  result.filter(function(item){
+    const i = resArr.findIndex(x => x.FSD_ID === item.FSD_ID);
+    if(i <= -1){
+      resArr.push({SERVICE_NAME: item.SERVICE_NAME, PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
+    }
+    return null;
+  });
+
+  return resArr;
 }
 
 export function changeCategory(searchVars){
