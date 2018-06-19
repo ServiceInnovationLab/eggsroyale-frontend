@@ -8,8 +8,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import bookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
-import axios from 'axios';
-import {loadData, mergeData} from '../../actions/index';
+import {mergeData} from '../../actions/index';
 import * as services from '../../csv.json';
 
 fontawesome.library.add(brands, home, health, activities, food, bookmark);
