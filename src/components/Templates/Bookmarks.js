@@ -52,7 +52,8 @@ class Bookmarks extends React.Component {
 
   render(){
     document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
-
+    const bm = window.localStorage.getItem("csc-bookmarks");
+    const bookmarksList = bm ? bm.split(',').filter(x => x !== 'null') : [];
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
         <header className={this.renderTheme(this.state.page)}>
@@ -63,7 +64,7 @@ class Bookmarks extends React.Component {
         <div className="container">
           <ul className="list-stripped">
             {
-              window.localStorage.names.split(',').map((item, key) => {
+              bookmarksList.map((item, key) => {
                 return <li key={key} className={`${this.renderTheme('home')}`}>
                   <a href={`#/${this.state.page}/${item.FSD_ID}`}>
                     <span style={{marginLeft: 0}}>
