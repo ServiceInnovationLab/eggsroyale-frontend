@@ -70,7 +70,7 @@ body {
 }
 
 nav {
-  a {
+  ul:not(.list-icons) a {
     text-decoration: none;
     display: block;
     color: #fff;
@@ -240,7 +240,6 @@ span.arrow {
   p {
     font-size: 15px;
     color: rgba(white, .7);
-    // margin-right: 100px;
   }
 
   h2 {
