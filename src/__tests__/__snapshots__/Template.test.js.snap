@@ -75,6 +75,7 @@ exports[`components <function Service(props) {
     var loc = window.location.href.split('/');
     _this.state = {
       page: loc.slice(-2)[0],
+      id: loc.slice(-1)[0],
       service: loc.slice(-1)[0],
       results: []
     };
@@ -121,54 +122,5 @@ exports[`components <function Service(props) {
       </span>
     </a>
   </header>
-  <div
-    className="about:blank sub-header"
-  >
-    <div
-      className="container"
-    >
-      <img
-        className="img-rounded img-inline"
-        src="http://placekitten.com/200/300"
-      />
-      <header
-        className="about:blank"
-        style={
-          Object {
-            "display": "inline-block",
-          }
-        }
-      >
-        <svg
-          aria-hidden="true"
-          className="svg-inline--fa fa-bookmark fa-w-12 "
-          data-icon="bookmark"
-          data-prefix="fas"
-          role="img"
-          style={Object {}}
-          viewBox="0 0 384 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"
-            fill="currentColor"
-            style={Object {}}
-          />
-        </svg>
-        <h2 />
-        <p />
-      </header>
-    </div>
-  </div>
-  <div
-    className="container-inner"
-  >
-    <p />
-    <p />
-    <p />
-    <p />
-    <p />
-    <p />
-  </div>
 </div>
 `;
