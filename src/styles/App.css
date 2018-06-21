@@ -155,7 +155,7 @@ ul:not(.list-icons) svg {
   left: -199px; }
 
 .aria-hidden {
-  display: none !important; }
+  display: none; }
 
 .sub-header {
   text-align: center;

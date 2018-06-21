@@ -182,6 +182,7 @@ ul:not(.list-icons) svg {
 
 .back-link {
   position: relative;
+
   a {
     text-decoration: none;
     color: $white;
@@ -210,7 +211,7 @@ ul:not(.list-icons) svg {
 }
 
 .aria-hidden {
-  display: none !important;
+  display: none;
 }
 
 .sub-header {
@@ -248,7 +249,7 @@ ul:not(.list-icons) svg {
 
   p {
     font-size: 15px;
-    color: rgba($white, .7);
+    color: rgba($white, 0.7);
   }
 }
 

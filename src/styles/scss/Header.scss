@@ -12,7 +12,7 @@ header {
   &.compact {
     position: relative;
     z-index: 1;
-    box-shadow: 0 2px 10px rgba($black, .7);
+    box-shadow: 0 2px 10px rgba($black, 0.7);
     height: 32px;
 
     svg {
@@ -25,13 +25,12 @@ header {
       position: absolute;
       margin-left: 0;
       color: $white;
-    }
-
-    span p {
-      position: absolute;
-      top: -5px;
-      left: -30px;
-      color: $white;
+      p {
+        position: absolute;
+        top: -5px;
+        left: -30px;
+        color: $white;
+      }
     }
   }
 
