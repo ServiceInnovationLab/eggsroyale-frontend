@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 html {
   height: 100%;
@@ -6,8 +6,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -15,7 +15,6 @@ html {
 body {
   position: relative;
   margin: 0;
-  // padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: $btn-grey;
@@ -82,12 +81,12 @@ nav {
     padding: 20px;
     font-size: 27px;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba($black, .4);
+    box-shadow: 0 0 10px rgba($black, 0.4);
     position: relative;
   }
 
   ul:not(.list-icons) svg {
-    font-size: 50px !important;
+    font-size: 50px;
     position: absolute;
     top: 10px;
   }
@@ -103,7 +102,7 @@ nav {
 
 
   svg {
-    font-size: 50px !important;
+    font-size: 50px;
     color: $white;
     height: 34px;
   }
@@ -134,9 +133,11 @@ nav {
 
 .listing {
   overflow: auto;
+
   ul {
     padding-bottom: 70px;
   }
+
   h2 {
     color: $white;
     text-transform: capitalize;
@@ -146,27 +147,30 @@ nav {
     border-radius: 18px;
     margin-bottom: 15px;
     position: relative;
+  }
 
-    a {
-      display: block;
-      padding: 10px;
-      overflow: auto;
-    }
-    img {
-      position: absolute;
-    }
+  li a {
+    display: block;
+    padding: 10px;
+    overflow: auto;
+  }
+
+  li img {
+    position: absolute;
   }
 
   span {
     display: inline-block;
     vertical-align: top;
     margin-left: 60px;
-
-    h3,
-    p { margin: 0; }
-    h3 { color: $white; margin-bottom: 5px;}
-    p { color: rgba($white, .7); }
   }
+
+  span h3,
+  span p { margin: 0; }
+
+  span h3 { color: $white; margin-bottom: 5px;}
+
+  span p { color: rgba($white, .7); }
 
   svg {
     color: $white;
