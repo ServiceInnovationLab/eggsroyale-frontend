@@ -16,12 +16,12 @@ header {
     header.compact span {
       position: absolute;
       margin-left: 0;
-      color: white; }
-      header.compact span p {
-        position: absolute;
-        top: -5px;
-        left: -30px;
-        color: white; }
+      color: #fff; }
+    header.compact span p {
+      position: absolute;
+      top: -5px;
+      left: -30px;
+      color: #fff; }
   header h1 {
     margin: 0;
     color: #fff;

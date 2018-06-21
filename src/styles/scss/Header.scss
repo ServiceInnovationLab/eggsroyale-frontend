@@ -1,16 +1,18 @@
+@import './variables';
+
 header {
-  background: rgba(63,127,150,1);
+  background: $header-bg;
   padding: 10px 0;
   text-align: center;
 
   &.listing {
-    background-color: orange;
+    background-color: $orange;
   }
 
   &.compact {
     position: relative;
     z-index: 1;
-    box-shadow: 0 2px 10px rgba(#000, .7);
+    box-shadow: 0 2px 10px rgba($black, .7);
     height: 32px;
 
     svg {
@@ -22,19 +24,20 @@ header {
     span {
       position: absolute;
       margin-left: 0;
-      color: white;
-      p {
-        position: absolute;
-        top: -5px;
-        left: -30px;
-        color: white;
-      }
+      color: $white;
+    }
+
+    span p {
+      position: absolute;
+      top: -5px;
+      left: -30px;
+      color: $white;
     }
   }
-  
+
   h1 {
     margin: 0;
-    color: #fff;
+    color: $white;
     font-weight: bold;
     font-size: 28px;
   }
