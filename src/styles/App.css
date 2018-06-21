@@ -74,7 +74,7 @@ nav span {
   display: flex; }
   .list-icons svg {
     font-size: 50px !important;
-    color: white;
+    color: #fff;
     height: 34px; }
   .list-icons li {
     text-align: center;
@@ -125,7 +125,7 @@ nav span {
     .listing span p {
       color: rgba(255, 255, 255, 0.7); }
   .listing svg {
-    color: white;
+    color: #fff;
     font-size: 40px;
     position: relative;
     top: 15px; }
@@ -134,7 +134,7 @@ nav span {
   position: relative; }
   .back-link a {
     text-decoration: none;
-    color: white; }
+    color: #fff; }
 
 span.arrow {
   border: solid #fff;
