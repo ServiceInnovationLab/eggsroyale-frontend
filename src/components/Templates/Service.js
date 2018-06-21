@@ -90,13 +90,18 @@ const Header = () => {
   );
 };
 
+function addBookmark(page) {
+  let bookmarks = window.localStorage.getItem("csc-bookmarks");
+  return bookmarks+`,${window.location.href}`;
+}
+
 const Subheader = props => {
   return (
     <div className={`${props.theme} sub-header`}>
       <div className="container">
         <Image src={props.image} alt={props.alt} />
         <header className={props.theme} style={{display: 'inline-block'}}>
-          <FontAwesomeIcon icon="bookmark" />
+          <FontAwesomeIcon icon="bookmark" onClick={()=>window.localStorage.setItem('csc-bookmarks', addBookmark(props.page))} />
           <h2>{props.service}</h2>
           <p>{props.serviceDesc}</p>
         </header>
