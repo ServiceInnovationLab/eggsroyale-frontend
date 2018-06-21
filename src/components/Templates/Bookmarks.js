@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../Image';
+// import Image from '../Image';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../actions/index';
 import fontawesome from '@fortawesome/fontawesome';
@@ -10,7 +10,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
-import axios from 'axios';
+// import axios from 'axios';
 // import { connect } from 'react-redux';
 // import * as actionCreators from '../actions/index';
 fontawesome.library.add(brands, home, health, activities, food, wellbeing);
