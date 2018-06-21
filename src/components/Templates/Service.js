@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Image from '../Image';
-import fontawesome from '@fortawesome/fontawesome';
+import fontawesome, { findIconDefinition } from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
 import home from '@fortawesome/fontawesome-free-solid/faHome';
@@ -65,16 +65,30 @@ class Service extends React.Component {
           <div className="container-inner">
             <p>{data.SERVICE_DETAIL}</p>
             <dl>
-              <dt>Website:</dt>
-              <dd>{data.PROVIDER_WEBSITE_1}</dd>
-              <dt>Email:</dt>
-              <dd>{data.PUBLISHED_CONTACT_EMAIL_1}</dd>
-              <dt>Address:</dt>
-              <dd>{data.PHYSICAL_DISTRICT}</dd>
-              <dt>Phone:</dt>
-              <dd>{data.PUBLISHED_PHONE_1}</dd>
-              <dt>Cost:</dt>
-              <dd>{data.COST_TYPE}</dd>
+              <Definition
+                term={'Website'}
+                item={data.PROVIDER_WEBSITE_1}
+              />
+              <Definition
+                term={'Email'}
+                item={data.PUBLISHED_CONTACT_EMAIL_1}
+              />
+
+              <Definition
+                term={'Address'}
+                item={data.PHYSICAL_DISTRICT}
+              />
+
+              <Definition
+                term={'Phone'}
+                item={data.PUBLISHED_PHONE_1}
+              />
+
+              <Definition
+                term={'Cost'}
+                item={data.COST_TYPE}
+              />
+
             </dl>
           </div>
         </div>
@@ -83,6 +97,17 @@ class Service extends React.Component {
     );
   }
 }
+
+const Definition = props => {
+  return (
+    <Fragment>
+      {props.item && <Fragment>
+        <dt>{props.term}:</dt>
+        <dd>{props.item}</dd>
+      </Fragment>}
+    </Fragment>
+  );
+};
 
 const Header = () => {
   return (
