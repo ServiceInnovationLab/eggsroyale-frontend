@@ -64,32 +64,7 @@ class Service extends React.Component {
           />
           <div className="container-inner">
             <p>{data.SERVICE_DETAIL}</p>
-            <dl>
-              <Definition
-                term={'Website'}
-                item={data.PROVIDER_WEBSITE_1}
-              />
-              <Definition
-                term={'Email'}
-                item={data.PUBLISHED_CONTACT_EMAIL_1}
-              />
-
-              <Definition
-                term={'Address'}
-                item={data.PHYSICAL_DISTRICT}
-              />
-
-              <Definition
-                term={'Phone'}
-                item={data.PUBLISHED_PHONE_1}
-              />
-
-              <Definition
-                term={'Cost'}
-                item={data.COST_TYPE}
-              />
-
-            </dl>
+            <DefinitionList data={data} />
           </div>
         </div>
         }
@@ -97,6 +72,34 @@ class Service extends React.Component {
     );
   }
 }
+
+const DefinitionList = props => {
+  return <dl>
+    <Definition
+      term={'Website'}
+      item={props.data.PROVIDER_WEBSITE_1}
+    />
+    <Definition
+      term={'Email'}
+      item={props.data.PUBLISHED_CONTACT_EMAIL_1}
+    />
+
+    <Definition
+      term={'Address'}
+      item={props.data.PHYSICAL_DISTRICT}
+    />
+
+    <Definition
+      term={'Phone'}
+      item={props.data.PUBLISHED_PHONE_1}
+    />
+
+    <Definition
+      term={'Cost'}
+      item={props.data.COST_TYPE}
+    />
+  </dl>;
+};
 
 const Definition = props => {
   return (
