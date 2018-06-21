@@ -30,10 +30,7 @@ class Listings extends React.Component {
   }
 
   componentDidMount() {
-    // return loadData(this.state.page);
-    // console.log('in listings', loadData(this.state.page))
-    this.setState({results: loadData(this.state.page)})
-    console.log(this.state.page)
+    this.setState({results: loadData(this.state.page)});
   }
 
   renderTheme(state) {
@@ -93,16 +90,16 @@ class Listings extends React.Component {
         <div className="container">
           <ul className="list-stripped">
             {mergeData(services, this.state.results).map((item, key) => {
-                return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
-                  <a href={`#/${this.state.page}/${item.FSD_ID}`}>
-                    <Image src="http://placekitten.com/200/300" alt="kitten" />
-                    <span className="listing-details">
-                      <h3>{item.SERVICE_NAME}</h3>
-                      <p>{item.PROVIDER_NAME}</p>
-                    </span>
-                  </a>
-                </li>;
-              })}
+              return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
+                <a href={`#/${this.state.page}/${item.FSD_ID}`}>
+                  <Image src="http://placekitten.com/200/300" alt="kitten" />
+                  <span className="listing-details">
+                    <h3>{item.SERVICE_NAME}</h3>
+                    <p>{item.PROVIDER_NAME}</p>
+                  </span>
+                </a>
+              </li>;
+            })}
           </ul>
         </div>
       </div>

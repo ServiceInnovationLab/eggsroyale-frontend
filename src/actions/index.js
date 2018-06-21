@@ -3,7 +3,7 @@ import geolib from 'geolib';
 
 const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
 const API_PATH = process.env.REACT_APP_API_PATH;
-const GLOBAL_FILTER = "community services card";
+const GLOBAL_FILTER = 'community services card';
 
 let filters = category => category ? `&filters={"LEVEL_1_CATEGORY":"${category}"}` : '';
 const STATICFIELDS = 'FSD_ID,PROVIDER_CLASSIFICATION,LONGITUDE,LATITUDE,PROVIDER_NAME,PUBLISHED_CONTACT_EMAIL_1,PUBLISHED_PHONE_1,PROVIDER_CONTACT_AVAILABILITY,ORGANISATION_PURPOSE,PHYSICAL_ADDRESS,PROVIDER_WEBSITE_1';
@@ -14,7 +14,6 @@ export function loadData(page){
   const API_PATH = process.env.REACT_APP_API_PATH;
   const CATEGORY = getCategory(page);
   let fields = '*';
-  console.log('CATEGORY', CATEGORY)
   let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
   AND "LEVEL_1_CATEGORY" = '${CATEGORY}'
   `;
