@@ -149,13 +149,13 @@ nav {
     position: relative;
   }
 
-  li a {
+  a {
     display: block;
     padding: 10px;
     overflow: auto;
   }
 
-  li img {
+  img {
     position: absolute;
   }
 
@@ -170,7 +170,7 @@ nav {
 
   span h3 { color: $white; margin-bottom: 5px;}
 
-  span p { color: rgba($white, .7); }
+  span p { color: rgba($white, 0.7); }
 
   svg {
     color: $white;
@@ -188,7 +188,7 @@ nav {
   }
 }
 
-span.arrow {
+.arrow {
   border: solid $white;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -216,7 +216,7 @@ span.arrow {
 .sub-header {
   text-align: center;
   padding: 20px 0;
-  box-shadow: 0 2px 20px rgba($black, .5);
+  box-shadow: 0 2px 20px rgba($black, 0.5);
 
   img {
     position: absolute;
@@ -235,6 +235,7 @@ span.arrow {
     text-align: left;
     vertical-align: top;
     margin-left: 85px;
+
     @media (min-width: 425px) {
       margin-right: 85px;
     }
@@ -242,15 +243,12 @@ span.arrow {
 
   h2 {
     font-size: 20px;
+    margin: 0;
   }
 
   p {
     font-size: 15px;
     color: rgba($white, .7);
-  }
-
-  h2 {
-    margin: 0;
   }
 }
 
