@@ -85,16 +85,16 @@ nav {
     position: relative;
   }
 
-  ul:not(.list-icons) svg {
-    font-size: 50px;
-    position: absolute;
-    top: 10px;
-  }
-
   span {
     display: inline-block;
     margin-left: 90px;
   }
+}
+
+ul:not(.list-icons) svg {
+  font-size: 50px;
+  position: absolute;
+  top: 10px;
 }
 
 .list-icons {
@@ -165,12 +165,12 @@ nav {
     margin-left: 60px;
   }
 
-  span h3,
-  span p { margin: 0; }
+  h3,
+  p { margin: 0; }
 
-  span h3 { color: $white; margin-bottom: 5px;}
+  h3 { color: $white; margin-bottom: 5px;}
 
-  span p { color: rgba($white, 0.7); }
+  p { color: rgba($white, 0.7); }
 
   svg {
     color: $white;

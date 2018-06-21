@@ -62,13 +62,14 @@ nav a {
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   position: relative; }
-nav ul:not(.list-icons) svg {
-  font-size: 50px;
-  position: absolute;
-  top: 10px; }
 nav span {
   display: inline-block;
   margin-left: 90px; }
+
+ul:not(.list-icons) svg {
+  font-size: 50px;
+  position: absolute;
+  top: 10px; }
 
 .list-icons {
   display: flex; }
@@ -116,13 +117,13 @@ nav span {
     display: inline-block;
     vertical-align: top;
     margin-left: 60px; }
-  .listing span h3,
-  .listing span p {
+  .listing h3,
+  .listing p {
     margin: 0; }
-  .listing span h3 {
+  .listing h3 {
     color: #fff;
     margin-bottom: 5px; }
-  .listing span p {
+  .listing p {
     color: rgba(255, 255, 255, 0.7); }
   .listing svg {
     color: #fff;
