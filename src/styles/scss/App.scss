@@ -32,6 +32,9 @@ body {
 
 .health {
   background: rgba(255,99,65,1);
+  svg {
+    left: 28px;
+  }
 }
 
 .health-bg {
@@ -97,7 +100,7 @@ nav {
 
 .list-icons {
   display: flex;
-  
+
 
   svg {
     font-size: 50px !important;
@@ -210,7 +213,7 @@ span.arrow {
   text-align: center;
   padding: 20px 0;
   box-shadow: 0 2px 20px rgba(#000, .5);
-  
+
   img {
     position: absolute;
     left: 20px;

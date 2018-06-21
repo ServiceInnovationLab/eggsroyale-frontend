@@ -25,6 +25,8 @@ body {
 
 .health {
   background: #ff6341; }
+  .health svg {
+    left: 28px; }
 
 .health-bg {
   background: #ef9272; }
