@@ -8,7 +8,9 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import bookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
-import axios from 'axios';
+import {mergeData} from '../../actions/index';
+import * as services from '../../csv.json';
+
 fontawesome.library.add(brands, home, health, activities, food, bookmark);
 
 class Service extends React.Component {
@@ -18,30 +20,27 @@ class Service extends React.Component {
     const loc = window.location.href.split('/');
     this.state = {
       page: loc.slice(-2)[0],
+      id: loc.slice(-1)[0],
       service: loc.slice(-1)[0],
       results: []
     };
   }
 
-  loadService(){
-    // const GLOBAL_FILTER = 'community services card';
-    const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
-    const API_PATH = process.env.REACT_APP_API_PATH;
-    // const CATEGORY = this.getCategory(this.state.page);
-    let fields = '*';
-
-    let where = `WHERE "FSD_ID" = '${this.state.service}'`;
-
-    // alert(CATEGORY.split(',')[0])
-
-    let sql =`SELECT DISTINCT ${fields} FROM "${RESOURCE_ID}" ${where} LIMIT 1`;
-    sql =  encodeURI(sql);
-    let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
-    return axios.get(url).then((response)=>{
-      this.setState({results: response.data.result.records[0]});
-    });
-  }
-
+  // loadService(){
+  //   const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
+  //   const API_PATH = process.env.REACT_APP_API_PATH;
+  //   let fields = '*';
+  //   let where = `WHERE "FSD_ID" = '${this.state.service}'`;
+  //   let sql =`SELECT DISTINCT ${fields} FROM "${RESOURCE_ID}" ${where} LIMIT 1`;
+  //   sql =  encodeURI(sql);
+  //   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
+    
+  //   return axios.get(url).then((response)=>{
+  //     // this.setState({results: response.data.result.records[0]});
+  //     console.log('in loadService()', response.data.result)
+  //   });
+  // }
+  
   renderTheme(state) {
     switch(state) {
     case state:
@@ -50,27 +49,29 @@ class Service extends React.Component {
       return 'home';
     }
   }
-  componentDidMount() {
-    return this.loadService();
-  }
+
   render() {
+    const data = mergeData(services, this.state.results).filter(x => x.FSD_ID === this.state.id)[0];
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
         <Header />
-        <Subheader
-          theme={this.renderTheme(this.state.page)}
-          image="http://placekitten.com/200/300"
-          service={this.state.results.PROVIDER_NAME}
-          serviceDesc={this.state.results.SERVICE_DETAIL}
-        />
-        <div className="container-inner">
-          <p>{this.state.results.ORGANISATION_PURPOSE}</p>
-          <p>{this.state.results.PROVIDER_CONTACT_AVAILABILITY}</p>
-          <p>{this.state.results.PHYSICAL_ADDRESS}</p>
-          <p>{this.state.results.PHYSICAL_DISTRICT}</p>
-          <p>{this.state.results.PHYSICAL_REGION}</p>
-          <p>{this.state.results.POSTAL_ADDRESS}</p>
+        {data !== undefined && <div>
+          <Subheader
+            theme={this.renderTheme(this.state.page)}
+            image="http://placekitten.com/200/300"
+            service={data.PROVIDER_NAME}
+            serviceDesc={data.SERVICE_DETAIL}
+          />
+          <div className="container-inner">
+            <p>{data.ORGANISATION_PURPOSE}</p>
+            <p>{data.PROVIDER_CONTACT_AVAILABILITY}</p>
+            <p>{data.PHYSICAL_ADDRESS}</p>
+            <p>{data.PHYSICAL_DISTRICT}</p>
+            <p>{data.PHYSICAL_REGION}</p>
+            <p>{data.POSTAL_ADDRESS}</p>
+          </div>
         </div>
+        }
       </div>
     );
   }
