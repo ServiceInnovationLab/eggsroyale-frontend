@@ -34,13 +34,13 @@ class Service extends React.Component {
   //   let sql =`SELECT DISTINCT ${fields} FROM "${RESOURCE_ID}" ${where} LIMIT 1`;
   //   sql =  encodeURI(sql);
   //   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
-    
+
   //   return axios.get(url).then((response)=>{
   //     // this.setState({results: response.data.result.records[0]});
   //     console.log('in loadService()', response.data.result)
   //   });
   // }
-  
+
   renderTheme(state) {
     switch(state) {
     case state:
@@ -59,16 +59,23 @@ class Service extends React.Component {
           <Subheader
             theme={this.renderTheme(this.state.page)}
             image="http://placekitten.com/200/300"
-            service={data.PROVIDER_NAME}
-            serviceDesc={data.SERVICE_DETAIL}
+            service={data.SERVICE_NAME}
+            serviceDesc={data.PROVIDER_NAME}
           />
           <div className="container-inner">
-            <p>{data.ORGANISATION_PURPOSE}</p>
-            <p>{data.PROVIDER_CONTACT_AVAILABILITY}</p>
-            <p>{data.PHYSICAL_ADDRESS}</p>
-            <p>{data.PHYSICAL_DISTRICT}</p>
-            <p>{data.PHYSICAL_REGION}</p>
-            <p>{data.POSTAL_ADDRESS}</p>
+            <p>{data.SERVICE_DETAIL}</p>
+            <dl>
+              <dt>Website:</dt>
+              <dd>{data.PROVIDER_WEBSITE_1}</dd>
+              <dt>Email:</dt>
+              <dd>{data.PUBLISHED_CONTACT_EMAIL_1}</dd>
+              <dt>Address:</dt>
+              <dd>{data.PHYSICAL_DISTRICT}</dd>
+              <dt>Phone:</dt>
+              <dd>{data.PUBLISHED_PHONE_1}</dd>
+              <dt>Cost:</dt>
+              <dd>{data.COST_TYPE}</dd>
+            </dl>
           </div>
         </div>
         }
@@ -95,7 +102,7 @@ const Subheader = props => {
     <div className={`${props.theme} sub-header`}>
       <div className="container">
         <Image src={props.image} alt={props.alt} />
-        <header className={props.theme} style={{display: 'inline-block'}}>
+        <header className={props.theme}>
           <FontAwesomeIcon icon="bookmark" />
           <h2>{props.service}</h2>
           <p>{props.serviceDesc}</p>

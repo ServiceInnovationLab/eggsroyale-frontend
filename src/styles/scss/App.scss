@@ -134,6 +134,14 @@ ul:not(.list-icons) svg {
 .listing {
   overflow: auto;
 
+  dl {
+    color: $white;
+    dd {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  }
+
   ul {
     padding-bottom: 70px;
   }
@@ -170,7 +178,9 @@ ul:not(.list-icons) svg {
 
   h3 { color: $white; margin-bottom: 5px;}
 
-  p { color: rgba($white, 0.7); }
+  p,
+  dl { color: rgba($white, 0.7); }
+  dt { font-weight: bold; }
 
   svg {
     color: $white;
@@ -237,6 +247,10 @@ ul:not(.list-icons) svg {
 
     @media (min-width: 425px) {
       margin-right: 85px;
+    }
+
+    @media (min-width: 426px) {
+      margin-left: 85px;
     }
   }
 

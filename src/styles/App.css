@@ -98,6 +98,11 @@ ul:not(.list-icons) svg {
 
 .listing {
   overflow: auto; }
+  .listing dl {
+    color: #fff; }
+    .listing dl dd {
+      margin-left: 0;
+      margin-bottom: 10px; }
   .listing ul {
     padding-bottom: 70px; }
   .listing h2 {
@@ -123,8 +128,11 @@ ul:not(.list-icons) svg {
   .listing h3 {
     color: #fff;
     margin-bottom: 5px; }
-  .listing p {
+  .listing p,
+  .listing dl {
     color: rgba(255, 255, 255, 0.7); }
+  .listing dt {
+    font-weight: bold; }
   .listing svg {
     color: #fff;
     font-size: 40px;
@@ -175,6 +183,9 @@ ul:not(.list-icons) svg {
     @media (min-width: 425px) {
       .sub-header header {
         margin-right: 85px; } }
+    @media (min-width: 426px) {
+      .sub-header header {
+        margin-left: 85px; } }
   .sub-header h2 {
     font-size: 20px;
     margin: 0; }

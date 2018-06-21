@@ -102,7 +102,7 @@ export function mergeData(data, results) {
   result.filter(function(item){
     const i = resArr.findIndex(x => x.FSD_ID === item.FSD_ID);
     if(i <= -1){
-      resArr.push({SERVICE_NAME: item.SERVICE_NAME, PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
+      resArr.push({COST_TYPE: item.COST_TYPE, PUBLISHED_PHONE_1: item.PUBLISHED_PHONE_1, PHYSICAL_DISTRICT: item.PHYSICAL_DISTRICT, PUBLISHED_CONTACT_EMAIL_1: item.PUBLISHED_CONTACT_EMAIL_1, PROVIDER_WEBSITE_1: item.PROVIDER_WEBSITE_1, SERVICE_NAME: item.SERVICE_NAME, PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
     }
     return null;
   });
