@@ -1,16 +1,25 @@
+---
 language: node_js
 node_js:
-  - "6"
+  - '9'
 sudo: false
 install:
   - npm install
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64  > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
 script:
   - npm test
+after_success:
+  - "./cc-test-reporter after-build --exit-code $EXIT_CODE"
 deploy:
   provider: script
   script: bash scripts/deploy.sh
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
+  github-token: "$GITHUB_TOKEN"
   keep-history: true
   on:
     branch: master
+env:
+  global:
+    secure: NA9Kz9d2hOXp6HyPbj693UOX+AVdt4XquyUijQ6zT4GxPrrQjrVNBJBgCCgY4Qa9cnZ8MihpIwXtkPbEm2NxhlyXQDirxvhz/L1OFBXBXonnn6vD/GaQvMq50q45+AKvyfeODJ6UD+196dXfOjkkKagu8wtpVKLb/N7dGsR3uqY0ObKThrLv/0Wawd8k4FDweiwpS1DtwjeW/LSn+78/L9lELn6MwA1dXTdfUcoNphUfQnixVwNKOWxpZl4upHbe/1p2w94k0ZK6tqBr0fciEKPfslbP8gDI6CiwdFD91zaXzIBpQWBcW76EICJcqTlKODZaoEvvhdZVo+FK6VsNrJJMwctFzMGd9FptVXJ619IRPBZ/R5V/GSUzl28zOnn8XoIBKOzOlWKrsgz28v56xFl8vDBwHerl0Uvb9RL7wPEZc2eSDIK2tiDZROsqwXlT/c5OIQqdx2NIo1UgbUIAZdwIWz4eqtq6hyJVRTPkDDVBcwLRMhxsvNTmkCM+JOvIm15xtPJ3y2aF9QP8EvhljqsQN0vtW2Z+WjgD0UgvkadLcP38Nec+uzxf2XjgX2pwBBZnJ6cfJKS7iU1KXH2xI9I4qh37FqRjWxvzNYpK4LohpZybXZhUpz8kl0tq0IdraaOuDI3kwu72qwwYilviGfHTUmrJQ9wIWuOxlrpCQXE=
