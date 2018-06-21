@@ -136,6 +136,7 @@ ul:not(.list-icons) svg {
 
   dl {
     color: $white;
+
     dd {
       margin-left: 0;
       margin-bottom: 10px;
@@ -155,12 +156,12 @@ ul:not(.list-icons) svg {
     border-radius: 18px;
     margin-bottom: 15px;
     position: relative;
-  }
 
-  li a {
-    display: block;
-    padding: 10px;
-    overflow: auto;
+    a {
+      display: block;
+      padding: 10px;
+      overflow: auto;
+    }
   }
 
   img {
@@ -180,6 +181,7 @@ ul:not(.list-icons) svg {
 
   p,
   dl { color: rgba($white, 0.7); }
+
   dt { font-weight: bold; }
 
   svg {
@@ -196,7 +198,7 @@ ul:not(.list-icons) svg {
   color: $white;
   display: inline-block;
 
-  span.arrow {
+  .arrow {
     border: solid $white;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -211,7 +213,7 @@ ul:not(.list-icons) svg {
     }
   }
 
-  span.arrow-left {
+  .arrow-left {
     transform: rotate(135deg);
     position: absolute;
     left: -125px;

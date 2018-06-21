@@ -112,10 +112,10 @@ ul:not(.list-icons) svg {
     border-radius: 18px;
     margin-bottom: 15px;
     position: relative; }
-  .listing li a {
-    display: block;
-    padding: 10px;
-    overflow: auto; }
+    .listing li a {
+      display: block;
+      padding: 10px;
+      overflow: auto; }
   .listing img {
     position: absolute; }
   .listing span {
@@ -144,7 +144,7 @@ ul:not(.list-icons) svg {
   text-decoration: none;
   color: #fff;
   display: inline-block; }
-  .back-link span.arrow {
+  .back-link .arrow {
     border: solid #fff;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -152,10 +152,10 @@ ul:not(.list-icons) svg {
     position: absolute !important;
     top: 130%;
     left: -125px; }
-    .back-link span.arrow.arrow-sm {
+    .back-link .arrow.arrow-sm {
       padding: 4px;
       top: 0; }
-  .back-link span.arrow-left {
+  .back-link .arrow-left {
     transform: rotate(135deg);
     position: absolute;
     left: -125px; }

@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import Image from '../Image';
-import fontawesome, { findIconDefinition } from '@fortawesome/fontawesome';
+import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
 import home from '@fortawesome/fontawesome-free-solid/faHome';
