@@ -91,7 +91,7 @@ class Listings extends React.Component {
           <ul className="list-stripped">
             {mergeData(services, this.state.results).map((item, key) => {
               return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
-                <a href={`#/${this.state.page}/${item.FSD_ID}`}>
+                <a href={`#/${this.state.page}/${item.FSD_ID}`} className="service">
                   <Image src="http://placekitten.com/200/300" alt="kitten" />
                   <span className="listing-details">
                     <h3>{item.SERVICE_NAME}</h3>

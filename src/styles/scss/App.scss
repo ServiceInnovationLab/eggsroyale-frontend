@@ -134,13 +134,11 @@ ul:not(.list-icons) svg {
 .listing {
   overflow: auto;
 
-  dl {
-    color: $white;
+  dl { color: $white; }
 
-    dd {
-      margin-left: 0;
-      margin-bottom: 10px;
-    }
+  dd {
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 
   ul {
@@ -156,12 +154,12 @@ ul:not(.list-icons) svg {
     border-radius: 18px;
     margin-bottom: 15px;
     position: relative;
+  }
 
-    a {
-      display: block;
-      padding: 10px;
-      overflow: auto;
-    }
+  .service {
+    display: block;
+    padding: 10px;
+    overflow: auto;
   }
 
   img {
