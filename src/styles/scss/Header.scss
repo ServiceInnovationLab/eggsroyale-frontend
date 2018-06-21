@@ -25,12 +25,13 @@ header {
       position: absolute;
       margin-left: 0;
       color: $white;
-      p {
-        position: absolute;
-        top: -5px;
-        left: -30px;
-        color: $white;
-      }
+    }
+
+    p {
+      position: absolute;
+      top: -5px;
+      left: -30px;
+      color: $white;
     }
   }
 

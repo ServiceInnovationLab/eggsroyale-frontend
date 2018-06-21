@@ -17,15 +17,11 @@ a {
 
 .service,
 .service-info {
-  // padding-right: 5%;
+  a { text-decoration: none; }
 
-  a {
-    text-decoration: none;
+  h3 { color: $primary-color; }
 
-    h3 { color: $primary-color; }
-
-    .telephone { color: $primary-color; }
-  }
+  .telephone { color: $primary-color; }
 
   dt {
     clear: left;
