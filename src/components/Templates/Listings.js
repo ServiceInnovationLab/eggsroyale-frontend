@@ -83,7 +83,9 @@ class Listings extends React.Component {
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
         <header className={this.renderTheme(this.state.page)}>
-          <a href="/" className="back-link"><span className="arrow arrow-left"></span><span className="aria-hidden">Navigate to home</span></a>
+          <a href="/" className="back-link">
+            <span className="arrow arrow-left"></span>
+            <span className="aria-hidden">Navigate to home</span></a>
           <FontAwesomeIcon icon={this.renderIcon(this.state.page)} />
           <h2>{this.state.page}</h2>
         </header>
