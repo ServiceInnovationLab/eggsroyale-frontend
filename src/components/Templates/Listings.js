@@ -78,7 +78,7 @@ class Listings extends React.Component {
     //   OR "SERVICE_TARGET_AUDIENCES" LIKE '%${GLOBAL_FILTER}%'
     //   OR "COST_DESCRIPTION" LIKE '%${GLOBAL_FILTER}%'
     //   OR "DELIVERY_METHODS" LIKE '%${GLOBAL_FILTER}%'`;
-  
+
     // let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${where} GROUP BY name ORDER BY name`;
   componentDidMount() {
     return this.loadFilters();
@@ -124,19 +124,19 @@ class Listings extends React.Component {
     }
   }
 
-  onlyUnique(value, index, self) { 
+  onlyUnique(value, index, self) {
     const unique = self.indexOf(value) === index;
     return unique;
   }
 
   render(){
     document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
-    
+
     const resArr = [];
     this.state.results.filter(function(item){
       const i = resArr.findIndex(x => x.FSD_ID === item.FSD_ID);
       if(i <= -1){
-        resArr.push({PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
+        resArr.push({SERVICE_NAME: item.SERVICE_NAME, PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
       }
       return null;
     });
@@ -155,8 +155,8 @@ class Listings extends React.Component {
                   <a href={`#/${this.state.page}/${item.FSD_ID}`}>
                     <Image src="http://placekitten.com/200/300" alt="kitten" />
                     <span className="listing-details">
-                      <h3>{item.PROVIDER_NAME}</h3>
-                      <p>{this.text_truncate(item.SERVICE_DETAIL)}</p>
+                      <h3>{item.SERVICE_NAME}</h3>
+                      <p>{item.PROVIDER_NAME}</p>
                     </span>
                   </a>
                 </li>;
