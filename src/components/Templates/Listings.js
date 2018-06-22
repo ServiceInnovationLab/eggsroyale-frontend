@@ -101,9 +101,9 @@ class Listings extends React.Component {
 
 const ListItems = props => {
   return <ul className="list-stripped">
-    {props.data.map((item, key) => {
+    {services.filter(x => x.CATEGORY === props.page).map((item, key) => {
       return <li key={key} className={props.theme}>
-        <a href={`#/${props.page}/${item.FSD_ID}`} className="service">
+        <a href={`#/${props.page}/0000${key+1}`} className="service">
           <Image src="http://placekitten.com/200/300" alt="kitten" />
           <span className="listing-details">
             <h3>{item.SERVICE_NAME}</h3>
