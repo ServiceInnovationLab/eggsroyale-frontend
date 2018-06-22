@@ -34,6 +34,7 @@ class App extends React.Component {
             <Route exact path="/:category/:id" component={Service} />
             <Route exact path="/search" component={Search} />
           </Switch>
+          <Footer />
         </div>
       </HashRouter>
     );
@@ -41,4 +42,3 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
-ReactDOM.render(<Footer />, document.getElementById('footer'));

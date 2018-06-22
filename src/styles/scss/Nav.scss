@@ -1,23 +1,23 @@
-@import "./helpers/lists";
+// @import "./helpers/lists";
 
-$primary-color: #35a744;
-$primary-text-color: #fff;
+// $primary-color: #35a744;
+// $primary-text-color: #fff;
 
-.selected {
-  background: $primary-color;
-  color: $primary-text-color;
-}
+// .selected {
+//   background: $primary-color;
+//   color: $primary-text-color;
+// }
 
-.list-icon {
+// .list-icon {
 
-  > span {
-    display: inline-block;
-    margin-right: 10px;
-  }
-}
+//   > span {
+//     display: inline-block;
+//     margin-right: 10px;
+//   }
+// }
 
-@media (max-width:425px) {
-  .nav {
-    display: none;
-  }
-}
+// @media (max-width:425px) {
+//   .nav {
+//     display: none;
+//   }
+// }
