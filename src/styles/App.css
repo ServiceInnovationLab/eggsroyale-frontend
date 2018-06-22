@@ -51,7 +51,7 @@ body {
   margin: 0 10px;
   position: relative; }
 
-nav ul:not(.list-icons) a {
+ul:not(.list-icons) a {
   text-decoration: none;
   display: block;
   color: #fff;
@@ -62,6 +62,7 @@ nav ul:not(.list-icons) a {
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   position: relative; }
+
 nav span {
   display: inline-block;
   margin-left: 90px; }

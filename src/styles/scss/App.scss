@@ -71,8 +71,8 @@ body {
   position: relative;
 }
 
-nav {
-  ul:not(.list-icons) a {
+ul:not(.list-icons) {
+  a {
     text-decoration: none;
     display: block;
     color: $white;
@@ -84,7 +84,9 @@ nav {
     box-shadow: 0 0 10px rgba($black, 0.4);
     position: relative;
   }
+}
 
+nav {
   span {
     display: inline-block;
     margin-left: 90px;
