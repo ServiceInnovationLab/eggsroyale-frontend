@@ -53,7 +53,7 @@ class Service extends React.Component {
   render() {
     const data = mergeData(services, this.state.results).filter(x => x.FSD_ID === this.state.id)[0];
     return (
-      <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
+      <div className={`listing service`} style={{background: '#fffcf0', color: 'black'}}>
         <Header />
         {data !== undefined && <div>
           <Subheader
