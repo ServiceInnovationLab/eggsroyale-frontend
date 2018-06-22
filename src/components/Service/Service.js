@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/Service.css';
 import fontawesome from '@fortawesome/fontawesome';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
 import home from '@fortawesome/fontawesome-free-solid/faHome';
 import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
-import ServiceDetail from './ServiceDetail';
-import ServiceContactDetail from './ServiceContactDetail';
 fontawesome.library.add(brands, home, health, activities, food, wellbeing);
 class Service extends Component {
   renderTheme(state) {
