@@ -25,6 +25,7 @@ class MapResults extends Component {
         )};
 
       </Map>
+      // <div>{console.log(this.props)}</div>
     );
   }
 }

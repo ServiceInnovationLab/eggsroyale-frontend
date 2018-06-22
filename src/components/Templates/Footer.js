@@ -6,6 +6,7 @@ import brands from '@fortawesome/fontawesome-free-brands';
 import faLocationArrow from '@fortawesome/fontawesome-free-solid/faLocationArrow';
 import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
 import faBookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
+import { Link } from 'react-router-dom';
 
 fontawesome.library.add(brands, faLocationArrow, faSearch, faBookmark);
 
@@ -17,7 +18,7 @@ class Footer extends React.Component {
         <div className="container">
           <nav>
             <ul className="list-stripped list-inline list-icons">
-              <li><a href={window.location.href+'map/'}><FontAwesomeIcon icon="location-arrow" /></a></li>
+              <li><Link to={'map'}><FontAwesomeIcon icon="location-arrow" /></Link></li>
               <li><FontAwesomeIcon icon="search" /></li>
               <li><FontAwesomeIcon icon="bookmark" /></li>
             </ul>
