@@ -12,12 +12,12 @@ a {
 .service a,
 .service-info a {
   text-decoration: none; }
-  .service a h3,
-  .service-info a h3 {
-    color: #35a744; }
-  .service a .telephone,
-  .service-info a .telephone {
-    color: #35a744; }
+.service h3,
+.service-info h3 {
+  color: #35a744; }
+.service .telephone,
+.service-info .telephone {
+  color: #35a744; }
 .service dt,
 .service-info dt {
   clear: left;

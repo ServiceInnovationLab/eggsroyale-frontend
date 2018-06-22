@@ -30,10 +30,7 @@ class Listings extends React.Component {
   }
 
   componentDidMount() {
-    // return loadData(this.state.page);
-    // console.log('in listings', loadData(this.state.page))
-    this.setState({results: loadData(this.state.page)})
-    console.log(this.state.page)
+    this.setState({results: loadData(this.state.page)});
   }
 
   renderTheme(state) {
@@ -85,30 +82,48 @@ class Listings extends React.Component {
     document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
-        <header className={this.renderTheme(this.state.page)}>
-          <a href="/" className="back-link"><span className="arrow arrow-left"></span><span className="aria-hidden">Navigate to home</span></a>
-          <FontAwesomeIcon icon={this.renderIcon(this.state.page)} />
-          <h2>{this.state.page}</h2>
-        </header>
+        <ListingHeader
+          page={this.state.page}
+          theme={this.renderTheme(this.state.page)}
+          icon={this.renderIcon(this.state.page)}
+        />
         <div className="container">
-          <ul className="list-stripped">
-            {mergeData(services, this.state.results).map((item, key) => {
-                return <li key={key} className={`${this.renderTheme(this.state.page)}`}>
-                  <a href={`#/${this.state.page}/${item.FSD_ID}`}>
-                    <Image src="http://placekitten.com/200/300" alt="kitten" />
-                    <span className="listing-details">
-                      <h3>{item.SERVICE_NAME} - {item.PROVIDER_NAME}</h3>
-                      <p>{this.text_truncate(item.SERVICE_DETAIL)}</p>
-                    </span>
-                  </a>
-                </li>;
-              })}
-          </ul>
+          <ListItems
+            data={mergeData(services, this.state.results)}
+            theme={this.renderTheme(this.state.page)}
+            page={this.state.page}
+          />
         </div>
       </div>
     );
   }
 }
+
+const ListItems = props => {
+  return <ul className="list-stripped">
+    {services.length > 0 && services.filter(x => x.CATEGORY === props.page).map((item, key) => {
+      return <li key={key} className={props.theme}>
+        <a href={`#/${props.page}/0000${key+1}`} className="service">
+          <Image src="http://placekitten.com/200/300" alt="kitten" />
+          <span className="listing-details">
+            <h3>{item.SERVICE_NAME}</h3>
+            <p>{item.PROVIDER_NAME}</p>
+          </span>
+        </a>
+      </li>;
+    })}
+  </ul>;
+};
+
+const ListingHeader = props => {
+  return <header className={props.theme}>
+    <a href="/" className="back-link">
+      <span className="arrow arrow-left"></span>
+      <span className="aria-hidden">Navigate to home</span></a>
+    <FontAwesomeIcon icon={props.icon} />
+    <h2>{props.page}</h2>
+  </header>;
+};
 
 const mapStateToProps=(state)=>{
   return state;
