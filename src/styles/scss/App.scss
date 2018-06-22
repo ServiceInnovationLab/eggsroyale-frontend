@@ -1,65 +1,67 @@
+@import "./variables";
+
 html {
   height: 100%;
   box-sizing: border-box;
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
+
 
 body {
   position: relative;
   margin: 0;
-  // padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background: rgba(101,111,125,1);
+  background: $btn-grey;
 }
 
 .home-header {
-  background: rgba(52,152,219,1);
+  background: $home-header;
 }
 
 .home {
-  background: rgba(67,122,199,1);
+  background: $home;
 }
 
 .home-bg {
-  background: rgba(46,97,169,1);
+  background: $home-bg;
 }
 
 .health {
-  background: rgba(255,99,65,1);
+  background: $health;
 }
 
 .health-bg {
-  background: rgba(239,146,114,1);
+  background: $health-bg;
 }
 
 .food {
-  background: rgba(46,198,204,1);
+  background: $food;
 }
 
 .food-bg {
-  background: rgba(114,239,230,1);
+  background: $food-bg;
 }
 
 .activities {
-  background: rgba(255,145,0,1);
+  background: $activities;
 }
 
 .activities-bg {
-  background: rgba(239,192,114,1);
+  background: $activities-bg;
 }
 
 .wellbeing {
-  background: rgba(38,194,122,1);
+  background: $wellbeing;
 }
 
 .wellbeing-bg {
-  background: rgba(114,239,165,1);
+  background: $wellbeing-bg;
 }
 
 // GENERIC
@@ -73,20 +75,14 @@ nav {
   ul:not(.list-icons) a {
     text-decoration: none;
     display: block;
-    color: #fff;
+    color: $white;
     margin-bottom: 10px;
     border-radius: 18px;
     padding: 20px;
     font-size: 27px;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba(#000, .4);
+    box-shadow: 0 0 10px rgba($black, 0.4);
     position: relative;
-  }
-
-  ul:not(.list-icons) svg {
-    font-size: 50px !important;
-    position: absolute;
-    top: 10px;
   }
 
   span {
@@ -95,13 +91,19 @@ nav {
   }
 }
 
+ul:not(.list-icons) svg {
+  font-size: 50px;
+  position: absolute;
+  top: 10px;
+}
+
 .list-icons {
   display: flex;
-  
+
 
   svg {
-    font-size: 50px !important;
-    color: white;
+    font-size: 50px;
+    color: $white;
     height: 34px;
   }
 
@@ -131,11 +133,20 @@ nav {
 
 .listing {
   overflow: auto;
+
+  dl { color: $white; }
+
+  dd {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
   ul {
     padding-bottom: 70px;
   }
+
   h2 {
-    color: #fff;
+    color: $white;
     text-transform: capitalize;
   }
 
@@ -143,30 +154,36 @@ nav {
     border-radius: 18px;
     margin-bottom: 15px;
     position: relative;
+  }
 
-    a {
-      display: block;
-      padding: 10px;
-      overflow: auto;
-    }
-    img {
-      position: absolute;
-    }
+  .service {
+    display: block;
+    padding: 10px;
+    overflow: auto;
+  }
+
+  img {
+    position: absolute;
   }
 
   span {
     display: inline-block;
     vertical-align: top;
     margin-left: 60px;
-
-    h3,
-    p { margin: 0; }
-    h3 { color: #fff; margin-bottom: 5px;}
-    p { color: rgba(#fff, .7); }
   }
 
+  h3,
+  p { margin: 0; }
+
+  h3 { color: $white; margin-bottom: 5px;}
+
+  p,
+  dl { color: rgba($white, 0.7); }
+
+  dt { font-weight: bold; }
+
   svg {
-    color: white;
+    color: $white;
     font-size: 40px;
     position: relative;
     top: 15px;
@@ -175,31 +192,30 @@ nav {
 
 .back-link {
   position: relative;
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
-
-span.arrow {
-  border: solid #fff;
-  border-width: 0 3px 3px 0;
+  text-decoration: none;
+  color: $white;
   display: inline-block;
-  padding: 6px;
-  position: absolute;
-  top: 130%;
-  left: -125px;
 
-  &.arrow-sm {
-    padding: 4px;
-    top: 0;
+  .arrow {
+    border: solid $white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 6px;
+    position: absolute !important;
+    top: 130%;
+    left: -125px;
+
+    &.arrow-sm {
+      padding: 4px;
+      top: 0;
+    }
   }
-}
 
-.arrow-left {
-  transform: rotate(135deg);
-  position: absolute;
-  left: -199px;
+  .arrow-left {
+    transform: rotate(135deg);
+    position: absolute;
+    left: -125px;
+  }
 }
 
 .aria-hidden {
@@ -209,8 +225,8 @@ span.arrow {
 .sub-header {
   text-align: center;
   padding: 20px 0;
-  box-shadow: 0 2px 20px rgba(#000, .5);
-  
+  box-shadow: 0 2px 20px rgba($black, 0.5);
+
   img {
     position: absolute;
     left: 20px;
@@ -228,22 +244,24 @@ span.arrow {
     text-align: left;
     vertical-align: top;
     margin-left: 85px;
+
     @media (min-width: 425px) {
       margin-right: 85px;
+    }
+
+    @media (min-width: 426px) {
+      margin-left: 85px;
     }
   }
 
   h2 {
     font-size: 20px;
+    margin: 0;
   }
 
   p {
     font-size: 15px;
-    color: rgba(white, .7);
-  }
-
-  h2 {
-    margin: 0;
+    color: rgba($white, 0.7);
   }
 }
 

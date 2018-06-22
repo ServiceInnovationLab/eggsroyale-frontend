@@ -3,7 +3,7 @@ header {
   padding: 10px 0;
   text-align: center; }
   header.listing {
-    background-color: orange; }
+    background-color: #ffa500; }
   header.compact {
     position: relative;
     z-index: 1;
@@ -16,12 +16,12 @@ header {
     header.compact span {
       position: absolute;
       margin-left: 0;
-      color: white; }
-      header.compact span p {
-        position: absolute;
-        top: -5px;
-        left: -30px;
-        color: white; }
+      color: #fff; }
+    header.compact p {
+      position: absolute;
+      top: -5px;
+      left: -30px;
+      color: #fff; }
   header h1 {
     margin: 0;
     color: #fff;
