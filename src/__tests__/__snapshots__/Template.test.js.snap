@@ -82,7 +82,13 @@ exports[`components <function Service(props) {
     return _this;
   } /> renders correctly 1`] = `
 <div
-  className="about:blank-bg listing service"
+  className="listing service"
+  style={
+    Object {
+      "background": "#fffcf0",
+      "color": "black",
+    }
+  }
 >
   <header
     className="home-header compact"
