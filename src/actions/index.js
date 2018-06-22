@@ -3,7 +3,7 @@ import geolib from 'geolib';
 
 const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
 const API_PATH = process.env.REACT_APP_API_PATH;
-const GLOBAL_FILTER = "community services card";
+const GLOBAL_FILTER = 'community services card';
 
 let filters = category => category ? `&filters={"LEVEL_1_CATEGORY":"${category}"}` : '';
 const STATICFIELDS = 'FSD_ID,PROVIDER_CLASSIFICATION,LONGITUDE,LATITUDE,PROVIDER_NAME,PUBLISHED_CONTACT_EMAIL_1,PUBLISHED_PHONE_1,PROVIDER_CONTACT_AVAILABILITY,ORGANISATION_PURPOSE,PHYSICAL_ADDRESS,PROVIDER_WEBSITE_1';
@@ -14,7 +14,6 @@ export function loadData(page){
   const API_PATH = process.env.REACT_APP_API_PATH;
   const CATEGORY = getCategory(page);
   let fields = '*';
-  console.log('CATEGORY', CATEGORY)
   let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
   AND "LEVEL_1_CATEGORY" = '${CATEGORY}'
   `;
@@ -103,7 +102,7 @@ export function mergeData(data, results) {
   result.filter(function(item){
     const i = resArr.findIndex(x => x.FSD_ID === item.FSD_ID);
     if(i <= -1){
-      resArr.push({SERVICE_NAME: item.SERVICE_NAME, PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
+      resArr.push({COST_TYPE: item.COST_TYPE, PUBLISHED_PHONE_1: item.PUBLISHED_PHONE_1, PHYSICAL_DISTRICT: item.PHYSICAL_DISTRICT, PUBLISHED_CONTACT_EMAIL_1: item.PUBLISHED_CONTACT_EMAIL_1, PROVIDER_WEBSITE_1: item.PROVIDER_WEBSITE_1, SERVICE_NAME: item.SERVICE_NAME, PROVIDER_NAME: item.PROVIDER_NAME, FSD_ID: item.FSD_ID, SERVICE_DETAIL: item.SERVICE_DETAIL});
     }
     return null;
   });
