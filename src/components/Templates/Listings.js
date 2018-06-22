@@ -11,10 +11,7 @@ import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
 import {loadData, mergeData} from '../../actions/index';
-// import { connect } from 'react-redux';
-// import * as actionCreators from '../actions/index';
 
 import * as services from '../../csv.json';
 
@@ -121,7 +118,7 @@ const ListingHeader = props => {
     <Link to="/" className="back-link">
       <span className="arrow arrow-left"></span>
       <span className="aria-hidden">Navigate to home</span>
-    </Link>
+    </Link>master
     <FontAwesomeIcon icon={props.icon} />
     <h2>{props.page}</h2>
   </header>;
