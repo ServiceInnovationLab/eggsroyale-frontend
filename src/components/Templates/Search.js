@@ -169,29 +169,19 @@ class Search extends Component {
           {this.resultCountButton()}
           { !this.props.itemsLoading && this.state.showMap && <MapResults className="container-fluid" LatLng={this.props.searchVars.addressLatLng} map_results={this.props.results} />}
           { !this.props.itemsLoading && !this.state.showMap && this.props.results.map((data,index)=>
-            <LazyLoad height={280} key={index}>
-                  <div className="home-bg listing">
-        <div className="container">
-          <ul className="list-stripped" style={{paddingBottom: 0}}>
-            
-              <Service results={data} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} serviceId={data.FSD_ID} loadResults={this.props.loadResults} />
-              
-          </ul>
-        </div>
-      </div>
+            <LazyLoad key={index}>
+              <div className="home-bg listing">
+                <div className="container">
+                  <ul className="list-stripped" style={{paddingBottom: 0}}>
+
+                    <Service results={data} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} serviceId={data.FSD_ID} loadResults={this.props.loadResults} />
+
+                  </ul>
+                </div>
+              </div>
             </LazyLoad>)}
         </div>
-        {/* <Sharebar/> */}
       </div>
-      // <nav className="container">
-      //   <ul className="list-stripped">
-      //     <li><Link to="home" className="home"><FontAwesomeIcon icon="home" /><span>Home</span></Link></li>
-      //     <li><Link to="health" className="health"><FontAwesomeIcon icon="plus-square" /><span>Health</span></Link></li>
-      //     <li><Link to="food" className="food"><FontAwesomeIcon icon="coffee" /><span>Food</span></Link></li>
-      //     <li><Link to="activities" className="activities"><FontAwesomeIcon icon="futbol" /><span>Activities</span></Link></li>
-      //     <li><Link to="wellbeing" className="wellbeing"><FontAwesomeIcon icon="leaf" /><span>Wellbeing</span></Link></li>
-      //   </ul>
-      // </nav>
     );
   }
 }
