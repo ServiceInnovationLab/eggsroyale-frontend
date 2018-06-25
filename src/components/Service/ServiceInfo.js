@@ -28,7 +28,7 @@ export class ServiceInfo extends React.Component {
             <Link to={'/'+(this.props.searchVars.category ? 'category/'+encodeURIComponent(decodeURIComponent(this.props.searchVars.category)):'')} onClick={()=> { window.scrollTo(0,0);}} >Go back</Link>
           )} />
           <ul className="list-stripped">
-            {filteredResults.map((i, key)  => (
+            {filteredResults.map((i, key) => (
               <div key={key}>
                 <div className="search-result-hero">
                   <h2>{i.PROVIDER_NAME}</h2>

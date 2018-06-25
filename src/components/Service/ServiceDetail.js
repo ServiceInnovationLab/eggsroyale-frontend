@@ -47,8 +47,8 @@ class ServiceDetail extends Component {
         if(!uniquecategories.includes(item.LEVEL_1_CATEGORY)){
           uniquecategories.push(item.LEVEL_1_CATEGORY);
         }
-        if(!currentCategory)  currentCategory = uniquecategories[0];
-        if(item.LEVEL_1_CATEGORY === currentCategory)  uniqueServices.push(item);
+        if(!currentCategory) currentCategory = uniquecategories[0];
+        if(item.LEVEL_1_CATEGORY === currentCategory) uniqueServices.push(item);
         unique[item.SERVICE_NAME] = item;
       });
       //const clone = {...this.props.searchVars};
