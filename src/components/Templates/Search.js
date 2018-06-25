@@ -152,16 +152,10 @@ class Search extends Component {
   }
 
   render() {
-    // console.log('results', this)
     return (
       <div>
-        {/* <Filters filters={this.props.filters} searchVars={this.props.searchVars} loadResults={this.props.loadResults} /> */}
         <form className="form" onSubmit={e => this.formSubmit(e)}>
           <input value={this.state.keyword} type="search" name="keyword" onBlur={this.keywordBlur.bind(this)} onKeyPress={this.enterPressed.bind(this)} onChange={e => this.onKeywordChange(e.target.value)} placeholder="Enter topic or organisation" />
-          {/* <AddressFinder noSearchVars={this.props.noSearchVars} loading={this.props.itemsLoading} loadResults={this.props.loadResults} searchVars={this.props.searchVars} radius={this.props.searchVars.radius}/>
-          {this.props.searchVars.addressLatLng && Object.keys(this.props.searchVars.addressLatLng).length !== 0 &&
-            <Proximity handler={this.radiusChange.bind(this)} radius={this.props.searchVars.radius}/>
-          } */}
           <button type="submit">Search</button>
           {(!this.props.noSearchVars && this.props.hasSearched) && <Route render={({ history,location}) => (<button type="button" onClick={()=> {(location.pathname !== '/' && history.push(''));this.resetForm();}}>Reset form</button>)} />}
         </form>
@@ -169,21 +163,23 @@ class Search extends Component {
           {this.resultCountButton()}
           { !this.props.itemsLoading && this.state.showMap && <MapResults className="container-fluid" LatLng={this.props.searchVars.addressLatLng} map_results={this.props.results} />}
           { !this.props.itemsLoading && !this.state.showMap && this.props.results.map((data,index)=>
-            <LazyLoad key={index}>
-              <div className="home-bg listing">
-                <div className="container">
-                  <ul className="list-stripped" style={{paddingBottom: 0}}>
-
-                    <Service results={data} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} serviceId={data.FSD_ID} loadResults={this.props.loadResults} />
-
-                  </ul>
-                </div>
-              </div>
-            </LazyLoad>)}
+            <Result key={index} />)}
         </div>
       </div>
     );
   }
+}
+
+const Result = props => {
+  return <LazyLoad key={props.key}>
+  <div className="home-bg listing">
+    <div className="container">
+      <ul className="list-stripped" style={{paddingBottom: 0}}>
+        <Service results={data} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} serviceId={data.FSD_ID} loadResults={this.props.loadResults} />
+      </ul>
+    </div>
+  </div>
+</LazyLoad>
 }
 
 function mapStateToProps(state,ownProps) {
