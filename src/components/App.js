@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Route } from 'react-router-dom';
-import {connect} from 'react-redux';
-import * as actionCreators from '../actions/index';
+// import {connect} from 'react-redux';
+// import * as actionCreators from '../actions/index';
 // import MapResults from './Map/MapResults';
 // import AddressFinder from './Forms/AddressFinder';
 // import LazyLoad from 'react-lazyload';
@@ -188,22 +188,4 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state,ownProps) {
-  const clone = {...state.searchVars};
-  if(!state.searchVars.category && ownProps.startCategory){
-    /* for some unidentified reason ownProps.startCategory is returning a string */
-    clone.category = (ownProps.startCategory === 'undefined') ? '' : ownProps.startCategory;
-  }
-  return {
-    filters: state.filter,
-    results: state.results,
-    showMap: state.showMap,
-    searchVars: clone,
-    noSearchVars: state.noSearchVars,
-    totalResults: state.totalResults,
-    itemsLoading: state.itemsLoading,
-    hasSearched: state.hasSearched
-  };
-}
-
-export default connect(mapStateToProps, actionCreators)(App);
+export default App;

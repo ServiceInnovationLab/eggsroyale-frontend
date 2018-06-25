@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as actionCreators from '../../actions/index';
 import MapResults from '../Map/MapResults';
 // import AddressFinder from '../Forms/AddressFinder';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 // import Filters from '../Service/Filters';
 import Service from '../../components/Service/Service';
 // import Sharebar from '../../components/Social/Sharebar';
@@ -163,7 +163,7 @@ class Search extends Component {
           {this.resultCountButton()}
           { !this.props.itemsLoading && this.state.showMap && <MapResults className="container-fluid" LatLng={this.props.searchVars.addressLatLng} map_results={this.props.results} />}
           { !this.props.itemsLoading && !this.state.showMap && this.props.results.map((data,index)=>
-            <Result key={index} data={data} />)}
+            <Result key={index} data={data} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} loadResults={this.props.loadResults}/>)}
         </div>
       </div>
     );
@@ -171,15 +171,14 @@ class Search extends Component {
 }
 
 const Result = props => {
-  return <LazyLoad key={props.key}>
-    <div className="home-bg listing">
+  console.log(props)
+  return <div className="home-bg listing">
       <div className="container">
         <ul className="list-stripped" style={{paddingBottom: 0}}>
-          <Service results={props.data} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} serviceId={data.FSD_ID} loadResults={this.props.loadResults} />
+          <Service results={props.data} changeCategory={props.changeCategory} searchVars={props.searchVars} serviceId={props.data.FSD_ID} loadResults={props.loadResults} />
         </ul>
       </div>
-    </div>
-  </LazyLoad>;
+    </div>;
 };
 
 function mapStateToProps(state,ownProps) {
