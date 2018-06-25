@@ -10,7 +10,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import {loadData, mergeData} from '../../actions/index';
 
 import * as services from '../../csv.json';
@@ -80,11 +80,11 @@ class Listings extends React.Component {
     document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
     return (
       <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
-        <ListingHeader
+        <BrowserRouter><ListingHeader
           page={this.state.page}
           theme={this.renderTheme(this.state.page)}
           icon={this.renderIcon(this.state.page)}
-        />
+        /></BrowserRouter >
         <div className="container">
           <ListItems
             data={mergeData(services, this.state.results)}

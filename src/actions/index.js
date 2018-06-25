@@ -28,6 +28,8 @@ export function loadData(page){
   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
   return axios.get(url).then((response)=>{
     return response.data.result.records;
+  }).catch((error) => {
+    console.log('Error')
   });
 }
 
