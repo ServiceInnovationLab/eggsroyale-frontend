@@ -33,7 +33,7 @@ class ServiceDetail extends Component {
       const FIELDS = '_id,LEVEL_1_CATEGORY,SERVICE_NAME,SERVICE_TARGET_AUDIENCES,SERVICE_DETAIL,DELIVERY_METHODS,COST_TYPE,COST_DESCRIPTION,SERVICE_REFERRALS';
       let urldetails = encodeURI(`${process.env.REACT_APP_API_PATH}datastore_search?resource_id=${process.env.REACT_APP_API_RESOURCE_ID}&fields=${FIELDS}${this.filters(serviceId)}`);
       return axios.get(urldetails).then((response)=>{
-        if (this.refs.myRef) this.setState({records: response.data.result.records, recordsLoaded: true});
+        if (this.refs.myRef) {this.setState({records: response.data.result.records, recordsLoaded: true});}
         this.displayServiceDetails(this.props.searchVars.category);
       });
     }
@@ -60,7 +60,7 @@ class ServiceDetail extends Component {
   }
 
   componentDidMount () {
-    if(this.props.serviceId) this.loadServiceDetails(this.props.serviceId);
+    if(this.props.serviceId) {this.loadServiceDetails(this.props.serviceId);}
   }
 
   render() {

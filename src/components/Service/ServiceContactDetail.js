@@ -44,7 +44,7 @@ class ServiceContactDetail extends React.Component {
 
   render() {
     let thisList = (this.props.locations) ? this.serviceLocationsBuilder() : this.serviceDetailsBuilder();
-    if(thisList.length === 0) return null;
+    if(thisList.length === 0) {return null;}
     return (
       <ul className="list-stripped">
         {this.listBuilder(thisList)}
