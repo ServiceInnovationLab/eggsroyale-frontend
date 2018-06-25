@@ -24,7 +24,7 @@ export function loadData(page){
   `;
 
   let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${CATEGORY.length > 1 ? whereArray : where}`;
-  sql =  encodeURI(sql);
+  sql = encodeURI(sql);
   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
   return axios.get(url).then((response)=>{
     return response.data.result.records;
@@ -117,7 +117,7 @@ function requestBuilder(searchVars){
   let q = (searchVars.keyword && searchVars.keyword.length > 2) ? searchVars.keyword : '';
   let theq = `&q=${q} ${GLOBAL_FILTER}`;
   let url = encodeURI(`${API_PATH}datastore_search?resource_id=${RESOURCE_ID}&fields=${STATICFIELDS}${theq}&distinct=true${filters(searchVars.category)}`);
-  if(searchVars.addressLatLng.latitude) url += '&limit=5000';
+  if(searchVars.addressLatLng.latitude) {url += '&limit=5000';}
   return url;
 }
 
@@ -146,9 +146,9 @@ function findNearMe(data, addressLatLng, radius) {
 function sortByDistance(data){
   return data.sort(function(a,b){
     if (a.DISTANCE < b.DISTANCE)
-      return -1;
+    {return -1;}
     if (a.DISTANCE > b.DISTANCE)
-      return 1;
+    {return 1;}
     return 0;
   });
 }

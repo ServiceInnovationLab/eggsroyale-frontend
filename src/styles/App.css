@@ -98,8 +98,6 @@ ul:not(.list-icons) svg {
 
 .listing {
   overflow: auto; }
-  .listing dl {
-    color: #fff; }
   .listing dd {
     margin-left: 0;
     margin-bottom: 10px; }
@@ -128,8 +126,7 @@ ul:not(.list-icons) svg {
   .listing h3 {
     color: #fff;
     margin-bottom: 5px; }
-  .listing p,
-  .listing dl {
+  .listing p {
     color: rgba(255, 255, 255, 0.7); }
   .listing dt {
     font-weight: bold; }

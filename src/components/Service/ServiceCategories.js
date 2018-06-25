@@ -10,7 +10,7 @@ class ServiceCategories extends React.Component {
         <small>
           <ul className="list-stripped">
             {this.props.categories.map((data,index) => <Route key={index} render={() => (
-              <li className={data === decodeURIComponent(this.props.category) ? 'selected'  : ''}>
+              <li className={data === decodeURIComponent(this.props.category) ? 'selected' : ''}>
                 <a href={`/service/${this.props.serviceId}`} onClick={(e)=> {
                   e.preventDefault();
                   this.props.displayServiceDetails(data);
