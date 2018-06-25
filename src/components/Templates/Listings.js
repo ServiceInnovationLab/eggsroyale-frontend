@@ -13,6 +13,7 @@ import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
 import { BrowserRouter, Link } from 'react-router-dom';
 import {loadData, mergeData} from '../../actions/index';
 import * as services from '../../csv.json';
+import {renderIcon, renderTheme} from './Theme';
 
 fontawesome.library.add(brands, home, health, activities, food, wellbeing);
 class Listings extends React.Component {
@@ -30,51 +31,24 @@ class Listings extends React.Component {
     this.setState({results: loadData(this.state.page)});
   }
 
-  renderTheme(state) {
-    switch(state) {
-    case state:
-      return state;
-    default:
-      return 'home';
-    }
-  }
-
-  renderIcon(state) {
-    switch(state) {
-    case 'home':
-      return 'home';
-    case 'food':
-      return 'coffee';
-    case 'activities':
-      return 'futbol';
-    case 'wellbeing':
-      return 'leaf';
-    case 'health':
-      return 'plus-square';
-    default:
-      return 'home';
-    }
-  }
-
-
   onlyUnique(value, index, self) {
     const unique = self.indexOf(value) === index;
     return unique;
   }
 
   render(){
-    document.querySelector('body').setAttribute('class',`${this.renderTheme(this.state.page)}-bg`);
+    document.querySelector('body').setAttribute('class',`${renderTheme(this.state.page)}-bg`);
     return (
-      <div className={`${this.renderTheme(this.state.page)}-bg listing`}>
+      <div className={`${renderTheme(this.state.page)}-bg listing`}>
         <BrowserRouter><ListingHeader
           page={this.state.page}
-          theme={this.renderTheme(this.state.page)}
-          icon={this.renderIcon(this.state.page)}
+          theme={renderTheme(this.state.page)}
+          icon={renderIcon(this.state.page)}
         /></BrowserRouter >
         <div className="container">
           <ListItems
             data={mergeData(services, this.state.results)}
-            theme={this.renderTheme(this.state.page)}
+            theme={renderTheme(this.state.page)}
             page={this.state.page}
           />
         </div>

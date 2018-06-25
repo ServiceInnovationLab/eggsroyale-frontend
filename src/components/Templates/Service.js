@@ -10,6 +10,7 @@ import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import bookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
 import {mergeData} from '../../actions/index';
 import * as services from '../../csv.json';
+import {renderTheme} from './Theme';
 
 fontawesome.library.add(brands, home, health, activities, food, bookmark);
 
@@ -41,23 +42,14 @@ class Service extends React.Component {
   //   });
   // }
 
-  renderTheme(state) {
-    switch(state) {
-    case state:
-      return state;
-    default:
-      return 'home';
-    }
-  }
-
   render() {
     const data = mergeData(services, this.state.results).filter(x => x.FSD_ID === this.state.id)[0];
     return (
-      <div className={`${this.renderTheme(this.state.page)}-bg listing service`}>
+      <div className={`${renderTheme(this.state.page)}-bg listing service`}>
         <Header />
         {data !== undefined && <div>
           <Subheader
-            theme={this.renderTheme(this.state.page)}
+            theme={renderTheme(this.state.page)}
             image="http://placekitten.com/200/300"
             service={data.SERVICE_NAME}
             serviceDesc={data.PROVIDER_NAME}

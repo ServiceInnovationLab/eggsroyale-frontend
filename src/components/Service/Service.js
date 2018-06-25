@@ -11,30 +11,6 @@ import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
 
 fontawesome.library.add(brands, home, health, activities, food, wellbeing);
 class Service extends Component {
-  renderTheme(state) {
-    switch(state) {
-    case state:
-      return state;
-    default:
-      return 'home';
-    }
-  }
-  renderIcon(state) {
-    switch(state) {
-    case 'home':
-      return 'home';
-    case 'food':
-      return 'coffee';
-    case 'activities':
-      return 'futbol';
-    case 'wellbeing':
-      return 'leaf';
-    case 'health':
-      return 'plus-square';
-    default:
-      return 'home';
-    }
-  }
 
   render() {
     return (
