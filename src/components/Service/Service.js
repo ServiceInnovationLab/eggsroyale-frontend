@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/Service.css';
 import fontawesome from '@fortawesome/fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
 import home from '@fortawesome/fontawesome-free-solid/faHome';
