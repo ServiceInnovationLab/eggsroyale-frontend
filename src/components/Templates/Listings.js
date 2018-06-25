@@ -12,7 +12,6 @@ import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
 import { BrowserRouter, Link } from 'react-router-dom';
 import {loadData, mergeData} from '../../actions/index';
-
 import * as services from '../../csv.json';
 
 fontawesome.library.add(brands, home, health, activities, food, wellbeing);
@@ -57,19 +56,6 @@ class Listings extends React.Component {
     }
   }
 
-  text_truncate(str, length, ending) {
-    if (length == null) {
-      length = 100;
-    }
-    if (ending == null) {
-      ending = '...';
-    }
-    if (str.length > length) {
-      return str.substring(0, length - ending.length) + ending;
-    } else {
-      return str;
-    }
-  }
 
   onlyUnique(value, index, self) {
     const unique = self.indexOf(value) === index;

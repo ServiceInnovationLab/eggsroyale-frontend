@@ -8,6 +8,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
+
 fontawesome.library.add(brands, home, health, activities, food, wellbeing);
 class Service extends Component {
   renderTheme(state) {
@@ -35,19 +36,6 @@ class Service extends Component {
     }
   }
 
-  text_truncate(str, length, ending) {
-    if (length == null) {
-      length = 100;
-    }
-    if (ending == null) {
-      ending = '...';
-    }
-    if (str.length > length) {
-      return str.substring(0, length - ending.length) + ending;
-    } else {
-      return str;
-    }
-  }
   render() {
     return (
       <li className='home'>
