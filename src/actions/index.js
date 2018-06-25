@@ -24,7 +24,7 @@ export function loadData(page){
   `;
 
   let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${CATEGORY.length > 1 ? whereArray : where}`;
-  sql =  encodeURI(sql);
+  sql = encodeURI(sql);
   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
   return axios.get(url).then((response)=>{
     return response.data.result.records;

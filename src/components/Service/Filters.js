@@ -34,7 +34,7 @@ class Filters extends React.Component {
         <nav className="nav">
           {this.props.filters.map((data,index) => {
             return (<Route key={index} render={({ history}) => (
-              <button className={this.props.searchVars.category === data.name ? 'selected'  : ''} key={data.num}
+              <button className={this.props.searchVars.category === data.name ? 'selected' : ''} key={data.num}
                 onClick={()=> {
                   history.push((this.props.searchVars.category === data.name ? '' : '/category/'+encodeURIComponent(data.name)));
                   this.categoryChange((this.props.searchVars.category === data.name ? '' : data.name));
