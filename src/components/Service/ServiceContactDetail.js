@@ -18,16 +18,16 @@ class ServiceContactDetail extends React.Component {
 
   serviceDetailsBuilder(){
     let obj = [];
-    if(this.props.email)          {this.serviceDetailsItem(obj,<FaMail />,<a href={`mailto:${this.props.email}`}>{this.props.email}</a>);}
-    if(this.props.hours)          {this.serviceDetailsItem(obj,<FaClock />,this.props.hours);}
-    if(this.props.phone)          {this.serviceDetailsItem(obj,<FaPhone />,<a href={`tel:${this.props.phone}`}>{this.props.phone}</a>);}
+    if(this.props.email) {this.serviceDetailsItem(obj,<FaMail />,<a href={`mailto:${this.props.email}`}>{this.props.email}</a>);}
+    if(this.props.hours) {this.serviceDetailsItem(obj,<FaClock />,this.props.hours);}
+    if(this.props.phone) {this.serviceDetailsItem(obj,<FaPhone />,<a href={`tel:${this.props.phone}`}>{this.props.phone}</a>);}
     return obj;
   }
 
   serviceLocationsBuilder(){
     let obj = [];
-    if(this.props.address)        {this.serviceDetailsItem(obj,<FaMapMarker />,this.props.address);}
-    if(this.props.website)        {this.serviceDetailsItem(obj,<FaExternalLink />, <a href={`${this.props.website}`} target="_blank">{this.props.website}</a>);}
+    if(this.props.address) {this.serviceDetailsItem(obj,<FaMapMarker />,this.props.address);}
+    if(this.props.website) {this.serviceDetailsItem(obj,<FaExternalLink />, <a href={`${this.props.website}`} target="_blank">{this.props.website}</a>);}
     if(this.props.classification) {this.serviceDetailsItem(obj,<FaFolderOpen />, this.props.classification);}
     return obj;
   }
