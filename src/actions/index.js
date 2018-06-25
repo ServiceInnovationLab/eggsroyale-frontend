@@ -29,7 +29,7 @@ export function loadData(page){
   return axios.get(url).then((response)=>{
     return response.data.result.records;
   }).catch((error) => {
-    console.log('Error')
+    console.log('Error', error);
   });
 }
 
