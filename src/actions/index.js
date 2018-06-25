@@ -29,7 +29,7 @@ export function loadData(page){
   return axios.get(url).then((response)=>{
     return response.data.result.records;
   }).catch((error) => {
-    console.log('Error', error);
+    return error;
   });
 }
 
@@ -64,7 +64,6 @@ function getCategory(cat) {
 //   return (dispatch) => {
 //     return axios.get(url).then((response)=>{
 //       dispatch(showFilters(response.data.result.records));
-//       console.log('in action', response.data.result.records)
 //     });
 //   };
 // }

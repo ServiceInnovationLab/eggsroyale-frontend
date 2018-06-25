@@ -38,7 +38,6 @@ class Service extends React.Component {
 
   //   return axios.get(url).then((response)=>{
   //     // this.setState({results: response.data.result.records[0]});
-  //     console.log('in loadService()', response.data.result)
   //   });
   // }
 

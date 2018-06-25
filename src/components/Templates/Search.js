@@ -171,7 +171,6 @@ class Search extends Component {
 }
 
 const Result = props => {
-  console.log(props)
   return <div className="home-bg listing">
       <div className="container">
         <ul className="list-stripped" style={{paddingBottom: 0}}>

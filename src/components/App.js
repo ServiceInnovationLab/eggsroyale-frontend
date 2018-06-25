@@ -152,7 +152,6 @@ class App extends Component {
   // }
 
   render() {
-    // console.log('results', this)
     return (
       // <div className="container-fluid">
       //   <Filters filters={this.props.filters} searchVars={this.props.searchVars} loadResults={this.props.loadResults} />
