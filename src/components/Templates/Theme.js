@@ -13,7 +13,7 @@ export function renderIcon(state) {
   default:
     return 'home';
   }
-};
+}
 
 export function renderTheme(state) {
   switch(state) {
