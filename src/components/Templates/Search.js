@@ -3,18 +3,11 @@ import { Route } from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actionCreators from '../../actions/index';
 import MapResults from '../Map/MapResults';
-// import AddressFinder from '../Forms/AddressFinder';
-// import LazyLoad from 'react-lazyload';
-// import Filters from '../Service/Filters';
 import Service from '../../components/Service/Service';
-// import Sharebar from '../../components/Social/Sharebar';
 import '../../styles/Nav.css';
 import '../../styles/Form.css';
-// import Proximity from '../Forms/Proximity';
-// import { Link } from 'react-router-dom';
 
 import fontawesome from '@fortawesome/fontawesome';
-// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
 import faHome from '@fortawesome/fontawesome-free-solid/faHome';
 import faPlusSquare from '@fortawesome/fontawesome-free-solid/faPlusSquare';
@@ -61,7 +54,6 @@ class Search extends Component {
   }
 
   componentWillMount () {
-    // if(this.props.filters.length === 0) this.props.loadFilters();
     this.radiusChange = this.debounce(this.radiusChange,200);
     this.setState({keyword: this.props.searchVars.keyword});
   }

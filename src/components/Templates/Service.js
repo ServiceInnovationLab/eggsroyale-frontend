@@ -27,20 +27,6 @@ class Service extends React.Component {
     };
   }
 
-  // loadService(){
-  //   const RESOURCE_ID = process.env.REACT_APP_API_RESOURCE_ID;
-  //   const API_PATH = process.env.REACT_APP_API_PATH;
-  //   let fields = '*';
-  //   let where = `WHERE "FSD_ID" = '${this.state.service}'`;
-  //   let sql =`SELECT DISTINCT ${fields} FROM "${RESOURCE_ID}" ${where} LIMIT 1`;
-  //   sql =  encodeURI(sql);
-  //   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
-
-  //   return axios.get(url).then((response)=>{
-  //     // this.setState({results: response.data.result.records[0]});
-  //   });
-  // }
-
   render() {
     const data = mergeData(services, this.state.results).filter(x => x.FSD_ID === this.state.id)[0];
     return (

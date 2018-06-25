@@ -50,24 +50,6 @@ function getCategory(cat) {
   }
 }
 
-
-// export function loadFilters(){
-//   let fields = '*';
-//   let where = `WHERE "SERVICE_DETAIL" LIKE '%${GLOBAL_FILTER}%'
-//     OR "SERVICE_TARGET_AUDIENCES" LIKE '%${GLOBAL_FILTER}%'
-//     OR "COST_DESCRIPTION" LIKE '%${GLOBAL_FILTER}%'
-//     OR "DELIVERY_METHODS" LIKE '%${GLOBAL_FILTER}%'`;
-
-//   let sql =`SELECT ${fields} FROM "${RESOURCE_ID}" ${where}`;
-//   sql =  encodeURI(sql);
-//   let url = `${API_PATH}datastore_search_sql?sql=${sql}`;
-//   return (dispatch) => {
-//     return axios.get(url).then((response)=>{
-//       dispatch(showFilters(response.data.result.records));
-//     });
-//   };
-// }
-
 /* category, keyword, addressLatLng, radius = 50000 */
 export function loadResults(searchVars) {
   let addressObj = Object.keys(searchVars.addressLatLng ? searchVars.addressLatLng : {});
