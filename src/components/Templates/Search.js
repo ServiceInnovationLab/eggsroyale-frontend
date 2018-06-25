@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import * as actionCreators from '../../actions/index';
 import MapResults from '../Map/MapResults';
 import Service from '../../components/Service/Service';
-import '../../styles/Nav.css';
 import '../../styles/Form.css';
 
 import fontawesome from '@fortawesome/fontawesome';
