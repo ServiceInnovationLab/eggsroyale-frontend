@@ -10,7 +10,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import {loadData, mergeData} from '../../actions/index';
 import * as services from '../../csv.json';
 import {renderIcon, renderTheme} from './Theme';
@@ -37,9 +37,11 @@ class Listings extends React.Component {
   }
 
   render(){
-    document.querySelector('body').setAttribute('class',`${renderTheme(this.state.page)}-bg`);
+
+    document.querySelector('body').setAttribute('class','body-bg');
     return (
-      <div className={`${renderTheme(this.state.page)}-bg listing`}>
+      <div className="body-bg">
+
         <BrowserRouter><ListingHeader
           page={this.state.page}
           theme={renderTheme(this.state.page)}
@@ -60,11 +62,11 @@ class Listings extends React.Component {
 const ListItems = props => {
   return <ul className="list-stripped">
     {services.length > 0 && services.filter(x => x.CATEGORY === props.page).map((item, key) => {
-      return <li key={key} className={props.theme}>
-        <a href={`#/${props.page}/0000${key+1}`} className="service">
+      return <li key={key}>
+        <a href={`#/${props.page}/0000${key+1}`} className="service listing-bg">
           <Image src="http://placekitten.com/200/300" alt="kitten" />
           <span className="listing-details">
-            <h3>{item.SERVICE_NAME}</h3>
+            <h3 className={`${props.theme}-text`}>{item.SERVICE_NAME}</h3>
             <p>{item.PROVIDER_NAME}</p>
           </span>
         </a>
@@ -75,12 +77,12 @@ const ListItems = props => {
 
 const ListingHeader = props => {
   return <header className={props.theme}>
-    <Link to="/" className="back-link">
+    <a href="/#" className="back-link">
       <span className="arrow arrow-left"></span>
       <span className="aria-hidden">Navigate to home</span>
-    </Link>master
+    </a>
     <FontAwesomeIcon icon={props.icon} />
-    <h2>{props.page}</h2>
+    <h2>{props.page.charAt(0).toUpperCase() + props.page.slice(1)}</h2>
   </header>;
 };
 

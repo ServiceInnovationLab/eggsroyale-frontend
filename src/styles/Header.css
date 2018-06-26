@@ -1,11 +1,13 @@
 header {
-  background: #3f7f96;
+  background: rgba(0, 0, 0, 0.2);
   padding: 10px 0;
   text-align: center; }
   header.listing {
     background-color: #ffa500; }
   header.compact {
-    position: relative;
+    position: absolute;
+    width: 100%;
+    top: 54px;
     z-index: 1;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     height: 32px; }
