@@ -92,6 +92,7 @@ exports[`components <function Service(props) {
     <a
       className="back-link"
       href="/"
+      onClick={[Function]}
     >
       <span
         className="arrow arrow-left arrow-sm"
