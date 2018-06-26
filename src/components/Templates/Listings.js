@@ -77,7 +77,7 @@ const ListItems = props => {
 
 const ListingHeader = props => {
   return <header className={props.theme}>
-    <a href="/#" className="back-link">
+    <a href="/" className="back-link">
       <span className="arrow arrow-left"></span>
       <span className="aria-hidden">Navigate to home</span>
     </a>
