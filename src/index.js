@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div>
-          <header>
+          <header className="main-header">
             <div className="container">
               <h1>Community Rewards</h1>
             </div>

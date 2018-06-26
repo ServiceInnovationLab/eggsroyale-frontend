@@ -3,6 +3,7 @@
 html {
   height: 100%;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -24,6 +25,47 @@ body {
   background: $home-header;
 }
 
+.body-bg {
+  background: $body-bg;
+
+  svg {
+    font-size: 40px;
+    margin-top: 10px;
+  }
+
+  h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  svg,
+  h2 { color: $white;}
+}
+
+.listing-bg {
+  background: $white;
+}
+
+.listing-details {
+  font-size: 16px;
+  display: block;
+  margin-left: 80px;
+  margin-right: 10px;
+
+  h3 {
+    margin-top: 5px;
+    margin-bottom: -10px;
+  }
+
+  p {
+    color: $listing-text;
+    margin-bottom: 0;
+    font-weight: 300;
+    margin-top: 10px;
+  }
+}
+
 .home {
   background: $home;
 }
@@ -34,6 +76,26 @@ body {
 
 .health {
   background: $health;
+
+  > svg {
+    left: 10px;
+  }
+}
+
+.health-text {
+  color: $health-font-color;
+}
+.home-text {
+  color: $home-font-color;
+}
+.food-text {
+  color: $food-font-color;
+}
+.activities-text {
+  color: $activities-font-color;
+}
+.wellbeing-text {
+  color: $wellbeing-font-color;
 }
 
 .health-bg {
@@ -79,12 +141,13 @@ ul:not(.list-icons) {
   }
 
   a {
+    overflow: auto;
     text-decoration: none;
     display: block;
     color: $white;
     margin-bottom: 10px;
     border-radius: 18px;
-    padding: 20px;
+    padding: 10px;
     font-size: 27px;
     font-weight: bold;
     box-shadow: 0 0 10px rgba($black, 0.4);
@@ -124,8 +187,8 @@ nav {
 
 .img-rounded {
   border-radius: 100%;
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
 
 .img-inline {
@@ -170,14 +233,13 @@ nav {
     display: inline-block;
     vertical-align: top;
     margin-left: 60px;
+    font-size: 1rem;
   }
 
   h3,
   p { margin: 0; }
 
   h3 { color: $white; margin-bottom: 5px;}
-
-  p { color: rgba($white, 0.7); }
 
   dt { font-weight: bold; }
 
@@ -223,33 +285,42 @@ nav {
 
 .sub-header {
   text-align: center;
-  padding: 20px 0;
+  padding: 140px 0 40px;
   box-shadow: 0 2px 20px rgba($black, 0.5);
 
   img {
     position: absolute;
     left: 20px;
     top: 10px;
+    @media(min-width:320px) {
+      left: 20px;
+    }
+
+    @media(min-width:320px) {
+      left: 20px;
+    }
+
   }
 
   svg {
     position: absolute;
-    right: 14px;
-    top: -6px;
+    right: 5px;
+    top: -26px;
     height: 31px;
   }
 
   header {
     text-align: left;
     vertical-align: top;
-    margin-left: 85px;
+    margin-left: 100px;
 
     @media (min-width: 425px) {
-      margin-right: 85px;
+      margin-right: 105px;
     }
 
     @media (min-width: 426px) {
-      margin-left: 85px;
+      padding-top: 20px;
+      margin-left: 115px;
     }
   }
 
@@ -274,4 +345,42 @@ nav {
 
   p,
   strong { line-height: 1.4em; }
+}
+
+.service-bg {
+  background-color: $white;
+  // margin-top: 54px;
+}
+
+.main-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  background: rgba(0,0,0,0.2);
+}
+
+.body-bg {
+  padding-bottom: 30px;
+  > header {
+    padding-top: 60px;
+  }
+}
+
+.back-link {
+  svg {
+    margin-top: 0;
+  }
+}
+
+.home-nav {
+  margin-top: 0;
+  padding-top: 65px;
+  a {
+    padding: 20px !important;
+  }
+}
+
+.service-bg {
+  background: $white;
 }

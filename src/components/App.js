@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <nav className="container">
-        <ul className="list-stripped">
+        <ul className="list-stripped home-nav">
           <li><Link to="home" className="home"><FontAwesomeIcon icon="home" /><span>Home</span></Link></li>
           <li><Link to="health" className="health"><FontAwesomeIcon icon="plus-square" /><span>Health</span></Link></li>
           <li><Link to="food" className="food"><FontAwesomeIcon icon="coffee" /><span>Food</span></Link></li>
