@@ -51,6 +51,10 @@ body {
   margin: 0 10px;
   position: relative; }
 
+ul:not(.list-icons) svg {
+  font-size: 50px;
+  position: absolute;
+  top: 10px; }
 ul:not(.list-icons) a {
   text-decoration: none;
   display: block;
@@ -66,11 +70,6 @@ ul:not(.list-icons) a {
 nav span {
   display: inline-block;
   margin-left: 90px; }
-
-ul:not(.list-icons) svg {
-  font-size: 50px;
-  position: absolute;
-  top: 10px; }
 
 .list-icons {
   display: flex; }
