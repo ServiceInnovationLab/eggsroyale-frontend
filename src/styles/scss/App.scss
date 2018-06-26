@@ -85,15 +85,19 @@ body {
 .health-text {
   color: $health-font-color;
 }
+
 .home-text {
   color: $home-font-color;
 }
+
 .food-text {
   color: $food-font-color;
 }
+
 .activities-text {
   color: $activities-font-color;
 }
+
 .wellbeing-text {
   color: $wellbeing-font-color;
 }
@@ -156,6 +160,7 @@ ul:not(.list-icons) {
 }
 
 nav {
+
   span {
     display: inline-block;
     margin-left: 90px;
@@ -292,6 +297,7 @@ nav {
     position: absolute;
     left: 20px;
     top: 10px;
+
     @media(min-width:320px) {
       left: 20px;
     }
@@ -336,6 +342,7 @@ nav {
 }
 
 .service {
+
   .container-inner {
     margin: 0 40px;
     height: 100%;
@@ -349,7 +356,6 @@ nav {
 
 .service-bg {
   background-color: $white;
-  // margin-top: 54px;
 }
 
 .main-header {
@@ -357,17 +363,19 @@ nav {
   position: absolute;
   top: 0;
   z-index: 2;
-  background: rgba(0,0,0,0.2);
+  background: $header-bg;
 }
 
 .body-bg {
   padding-bottom: 30px;
+
   > header {
     padding-top: 60px;
   }
 }
 
 .back-link {
+
   svg {
     margin-top: 0;
   }
@@ -376,6 +384,7 @@ nav {
 .home-nav {
   margin-top: 0;
   padding-top: 65px;
+
   a {
     padding: 20px !important;
   }

@@ -9,7 +9,7 @@ import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import bookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
 import {mergeData} from '../../actions/index';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import * as services from '../../csv.json';
 import {renderTheme} from './Theme';
 
@@ -32,7 +32,7 @@ class Service extends React.Component {
     const data = mergeData(services, this.state.results).filter(x => x.FSD_ID === this.state.id)[0];
     document.querySelector('body').setAttribute('class','service-bg');
     return (
-      <div className={`service-bg listing service`}>
+      <div className="service-bg listing service">
         <Header />
         {data !== undefined && <div>
           <Subheader
