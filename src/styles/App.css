@@ -19,7 +19,10 @@ body {
   background: #3498db; }
 
 .body-bg {
-  background: #d4d4d4; }
+  background: #d4d4d4;
+  padding-bottom: 30px; }
+  .body-bg > header {
+    padding-top: 60px; }
   .body-bg svg {
     font-size: 40px;
     margin-top: 10px; }
@@ -264,11 +267,6 @@ nav span {
   top: 0;
   z-index: 2;
   background: rgba(0, 0, 0, 0.2); }
-
-.body-bg {
-  padding-bottom: 30px; }
-  .body-bg > header {
-    padding-top: 60px; }
 
 .back-link svg {
   margin-top: 0; }

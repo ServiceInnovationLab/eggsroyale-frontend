@@ -27,6 +27,11 @@ body {
 
 .body-bg {
   background: $body-bg;
+  padding-bottom: 30px;
+
+  > header {
+    padding-top: 60px;
+  }
 
   svg {
     font-size: 40px;
@@ -364,14 +369,6 @@ nav {
   top: 0;
   z-index: 2;
   background: $header-bg;
-}
-
-.body-bg {
-  padding-bottom: 30px;
-
-  > header {
-    padding-top: 60px;
-  }
 }
 
 .back-link {
