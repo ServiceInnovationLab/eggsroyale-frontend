@@ -27,6 +27,11 @@ body {
 
 .body-bg {
   background: $body-bg;
+  padding-bottom: 30px;
+
+  > header {
+    padding-top: 60px;
+  }
 
   svg {
     font-size: 40px;
@@ -262,6 +267,10 @@ nav {
   color: $white;
   display: inline-block;
 
+  svg {
+    margin-top: 0;
+  }
+
   .arrow {
     border: solid $white;
     border-width: 0 3px 3px 0;
@@ -366,21 +375,6 @@ nav {
   background: $header-bg;
 }
 
-.body-bg {
-  padding-bottom: 30px;
-
-  > header {
-    padding-top: 60px;
-  }
-}
-
-.back-link {
-
-  svg {
-    margin-top: 0;
-  }
-}
-
 .home-nav {
   margin-top: 0;
   padding-top: 65px;
@@ -388,8 +382,4 @@ nav {
   a {
     padding: 20px !important;
   }
-}
-
-.service-bg {
-  background: $white;
 }
