@@ -78,7 +78,7 @@ const ListingHeader = props => {
     <Link to="/" className="back-link">
       <span className="arrow arrow-left"></span>
       <span className="aria-hidden">Navigate to home</span>
-    </Link>master
+    </Link>
     <FontAwesomeIcon icon={props.icon} />
     <h2>{props.page}</h2>
   </header>;

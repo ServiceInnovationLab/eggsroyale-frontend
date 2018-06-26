@@ -38,7 +38,6 @@ exports[`components <function Connect(props, context) {
         Navigate to home
       </span>
     </a>
-    master
     <svg
       aria-hidden="true"
       className="svg-inline--fa fa-home fa-w-18 "
