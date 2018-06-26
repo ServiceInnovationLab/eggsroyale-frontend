@@ -19,8 +19,7 @@ class Footer extends React.Component {
           <nav>
             <ul className="list-stripped list-inline list-icons">
               <li><Link to={'map'}><FontAwesomeIcon icon="location-arrow" /></Link></li>
-              <li><FontAwesomeIcon icon="search" /></li>
-              <li><FontAwesomeIcon icon="bookmark" /></li>
+              <li><Link to={'/search'}><FontAwesomeIcon icon="search" /></Link></li>
             </ul>
           </nav>
         </div>

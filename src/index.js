@@ -3,6 +3,7 @@ import AppCon from './container/app-container';
 import Listings from './components/Templates/Listings';
 import Service from './components/Templates/Service';
 import Footer from './components/Templates/Footer';
+import Search from './components/Templates/Search';
 import MapResults from './components/Templates/Map';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -32,6 +33,7 @@ class App extends React.Component {
             <Route exact path="/activities" component={Listings} />
             <Route exact path="/food" component={Listings} />
             <Route exact path="/:category/:id" component={Service} />
+            <Route exact path="/search" component={Search} />
             <Route exact path="/map" component={MapResults} />
           </Switch>
           <Footer />

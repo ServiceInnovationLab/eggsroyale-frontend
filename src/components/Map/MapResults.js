@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ServiceMapMarker from './ServiceMapMarker';
-import {  Map, TileLayer } from 'react-leaflet';
+import { Map, TileLayer } from 'react-leaflet';
 
 class MapResults extends Component {
 
