@@ -51,7 +51,11 @@ body {
   margin: 0 10px;
   position: relative; }
 
-nav a {
+ul:not(.list-icons) svg {
+  font-size: 50px;
+  position: absolute;
+  top: 10px; }
+ul:not(.list-icons) a {
   text-decoration: none;
   display: block;
   color: #fff;
@@ -62,14 +66,10 @@ nav a {
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   position: relative; }
+
 nav span {
   display: inline-block;
   margin-left: 90px; }
-
-ul:not(.list-icons) svg {
-  font-size: 50px;
-  position: absolute;
-  top: 10px; }
 
 .list-icons {
   display: flex; }
