@@ -193,6 +193,8 @@ nav span {
   text-decoration: none;
   color: #fff;
   display: inline-block; }
+  .back-link svg {
+    margin-top: 0; }
   .back-link .arrow {
     border: solid #fff;
     border-width: 0 3px 3px 0;
@@ -268,16 +270,10 @@ nav span {
   z-index: 2;
   background: rgba(0, 0, 0, 0.2); }
 
-.back-link svg {
-  margin-top: 0; }
-
 .home-nav {
   margin-top: 0;
   padding-top: 65px; }
   .home-nav a {
     padding: 20px !important; }
-
-.service-bg {
-  background: #fff; }
 
 /*# sourceMappingURL=App.css.map */
