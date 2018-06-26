@@ -43,12 +43,12 @@ class Search extends Component {
       var context = this, args = arguments;
       var later = function() {
         timeout = null;
-        if (!immediate) func.apply(context, args);
+        if (!immediate) {func.apply(context, args);}
       };
       var callNow = immediate && !timeout;
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+      if (callNow) {func.apply(context, args);}
     };
   }
 
@@ -163,12 +163,12 @@ class Search extends Component {
 
 const Result = props => {
   return <div className="home-bg listing">
-      <div className="container">
-        <ul className="list-stripped" style={{paddingBottom: 0}}>
-          <Service results={props.data} changeCategory={props.changeCategory} searchVars={props.searchVars} serviceId={props.data.FSD_ID} loadResults={props.loadResults} />
-        </ul>
-      </div>
-    </div>;
+    <div className="container">
+      <ul className="list-stripped" style={{paddingBottom: 0}}>
+        <Service results={props.data} changeCategory={props.changeCategory} searchVars={props.searchVars} serviceId={props.data.FSD_ID} loadResults={props.loadResults} />
+      </ul>
+    </div>
+  </div>;
 };
 
 function mapStateToProps(state,ownProps) {
