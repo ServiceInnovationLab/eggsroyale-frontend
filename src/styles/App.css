@@ -121,7 +121,8 @@ nav span {
   margin-left: 90px; }
 
 .list-icons {
-  display: flex; }
+  display: flex;
+  margin-top: 0; }
   .list-icons svg {
     font-size: 50px;
     color: #fff;
@@ -130,7 +131,7 @@ nav span {
     text-align: center;
     flex-direction: row;
     width: 33.33%;
-    padding-top: 16px; }
+    padding-top: 8px; }
 
 .list-stripped {
   list-style: none;
