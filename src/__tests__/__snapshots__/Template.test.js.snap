@@ -27,6 +27,7 @@ exports[`components <function Connect(props, context) {
     <a
       className="back-link"
       href="/"
+      onClick={[Function]}
     >
       <span
         className="arrow arrow-left"
@@ -37,6 +38,7 @@ exports[`components <function Connect(props, context) {
         Navigate to home
       </span>
     </a>
+    master
     <svg
       aria-hidden="true"
       className="svg-inline--fa fa-home fa-w-18 "
@@ -82,13 +84,7 @@ exports[`components <function Service(props) {
     return _this;
   } /> renders correctly 1`] = `
 <div
-  className="listing service"
-  style={
-    Object {
-      "background": "#fffcf0",
-      "color": "black",
-    }
-  }
+  className="about:blank-bg listing service"
 >
   <header
     className="home-header compact"
