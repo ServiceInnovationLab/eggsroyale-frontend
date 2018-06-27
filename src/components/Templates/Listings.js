@@ -10,7 +10,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { HashRouter, Link } from 'react-router-dom';
 import {loadData, mergeData} from '../../actions/index';
 import * as services from '../../csv.json';
 import {renderIcon, renderTheme} from './Theme';
@@ -61,13 +61,13 @@ const ListItems = props => {
   return <ul className="list-stripped">
     {services.length > 0 && services.filter(x => x.CATEGORY === props.page).map((item, key) => {
       return <li key={key}>
-        <a href={`#/${props.page}/0000${key+1}`} className="service listing-bg">
+        <Link to={`${props.page}/0000${key+1}`} className="service listing-bg">
           <Image src="http://placekitten.com/200/300" alt="kitten" />
           <span className="listing-details">
             <h3 className={`${props.theme}-text`}>{item.SERVICE_NAME}</h3>
             <p>{item.PROVIDER_NAME}</p>
           </span>
-        </a>
+        </Link>
       </li>;
     })}
   </ul>;
@@ -75,10 +75,10 @@ const ListItems = props => {
 
 const ListingHeader = props => {
   return <header className={props.theme}>
-    <Link to="/#" className="back-link">
+    <HashRouter><Link to="/#" className="back-link">
       <span className="arrow arrow-left"></span>
       <span className="aria-hidden">Navigate to home</span>
-    </Link>
+    </Link></HashRouter>
     <FontAwesomeIcon icon={props.icon} />
     <h2>{props.page.charAt(0).toUpperCase() + props.page.slice(1)}</h2>
   </header>;

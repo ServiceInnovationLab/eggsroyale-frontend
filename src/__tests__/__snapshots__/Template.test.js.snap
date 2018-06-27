@@ -22,11 +22,12 @@ exports[`components <function Connect(props, context) {
   className="body-bg"
 >
   <header
-    className="about:blank"
+    className=""
   >
     <a
       className="back-link"
-      href="/"
+      href="#/#"
+      onClick={[Function]}
     >
       <span
         className="arrow arrow-left"
@@ -54,7 +55,7 @@ exports[`components <function Connect(props, context) {
       />
     </svg>
     <h2>
-      About:blank
+      
     </h2>
   </header>
   <div
@@ -89,7 +90,8 @@ exports[`components <function Service(props) {
   >
     <a
       className="back-link"
-      href="/"
+      href="#/#"
+      onClick={[Function]}
     >
       <span
         className="arrow arrow-left arrow-sm"

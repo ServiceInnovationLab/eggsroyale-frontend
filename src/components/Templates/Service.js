@@ -9,7 +9,7 @@ import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import bookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
 import {mergeData} from '../../actions/index';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link, HashRouter } from 'react-router-dom';
 import * as services from '../../csv.json';
 import {renderTheme} from './Theme';
 
@@ -94,12 +94,12 @@ const Definition = props => {
 const Header = () => {
   return (
     <header className="home-header compact">
-        <Link to="/#" className="back-link">
+        <HashRouter><Link to="/#" className="back-link">
           <span className="arrow arrow-left arrow-sm"></span>
           <FontAwesomeIcon icon="home" />
           <span><p>Home</p></span>
           <span className="aria-hidden">Navigate to home</span>
-        </Link>
+        </Link></HashRouter>
     </header>
   );
 };
