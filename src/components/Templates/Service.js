@@ -9,7 +9,7 @@ import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import bookmark from '@fortawesome/fontawesome-free-solid/faBookmark';
 import {mergeData} from '../../actions/index';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import * as services from '../../csv.json';
 import {renderTheme} from './Theme';
 
@@ -30,7 +30,7 @@ class Service extends React.Component {
 
   render() {
     const data = mergeData(services, this.state.results).filter(x => x.FSD_ID === this.state.id)[0];
-    document.querySelector('body').setAttribute('class','service-bg');
+    document.body.style.background = '#fff';
     return (
       <div className="service-bg listing service">
         <Header />
@@ -94,14 +94,14 @@ const Definition = props => {
 const Header = () => {
   return (
     <header className="home-header compact">
-      <Router>
-        <a href="/" className="back-link">
+      {/* <Router> */}
+        <Link to="/#" className="back-link">
           <span className="arrow arrow-left arrow-sm"></span>
           <FontAwesomeIcon icon="home" />
           <span><p>Home</p></span>
           <span className="aria-hidden">Navigate to home</span>
-        </a>
-      </Router>
+        </Link>
+      {/* </Router> */}
     </header>
   );
 };

@@ -37,9 +37,7 @@ class Listings extends React.Component {
   }
 
   render(){
-
-    //document.querySelector('body').setAttribute('class','body-bg');
-    
+    document.body.style.background = '#d4d4d4';
     return (
       <div className="body-bg">
         <ListingHeader

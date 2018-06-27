@@ -15,6 +15,7 @@ fontawesome.library.add(brands, faHome, faPlusSquare, faCoffee, faFutbol, faLeaf
 
 class App extends Component {
   render() {
+    document.body.style.background = '#656f7d';
     return (
       <nav className="container">
         <ul className="list-stripped home-nav">
