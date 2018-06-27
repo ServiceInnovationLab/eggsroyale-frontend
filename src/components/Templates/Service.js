@@ -94,14 +94,12 @@ const Definition = props => {
 const Header = () => {
   return (
     <header className="home-header compact">
-      {/* <Router> */}
         <Link to="/#" className="back-link">
           <span className="arrow arrow-left arrow-sm"></span>
           <FontAwesomeIcon icon="home" />
           <span><p>Home</p></span>
           <span className="aria-hidden">Navigate to home</span>
         </Link>
-      {/* </Router> */}
     </header>
   );
 };
@@ -112,7 +110,6 @@ const Subheader = props => {
       <div className="container">
         <Image src={props.image} alt={props.alt} />
         <header className={props.theme}>
-          <FontAwesomeIcon icon="bookmark" />
           <h2>{props.service}</h2>
           <p>{props.serviceDesc}</p>
         </header>
