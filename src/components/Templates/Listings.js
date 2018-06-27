@@ -10,7 +10,7 @@ import health from '@fortawesome/fontawesome-free-solid/faPlusSquare';
 import activities from '@fortawesome/fontawesome-free-solid/faFutbol';
 import food from '@fortawesome/fontawesome-free-solid/faCoffee';
 import wellbeing from '@fortawesome/fontawesome-free-solid/faLeaf';
-import { BrowserRouter } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 import {loadData, mergeData} from '../../actions/index';
 import * as services from '../../csv.json';
 import {renderIcon, renderTheme} from './Theme';
@@ -38,15 +38,15 @@ class Listings extends React.Component {
 
   render(){
 
-    document.querySelector('body').setAttribute('class','body-bg');
+    //document.querySelector('body').setAttribute('class','body-bg');
+    
     return (
       <div className="body-bg">
-
-        <BrowserRouter><ListingHeader
+        <ListingHeader
           page={this.state.page}
           theme={renderTheme(this.state.page)}
           icon={renderIcon(this.state.page)}
-        /></BrowserRouter >
+        />
         <div className="container">
           <ListItems
             data={mergeData(services, this.state.results)}
@@ -77,10 +77,10 @@ const ListItems = props => {
 
 const ListingHeader = props => {
   return <header className={props.theme}>
-    <a href="/" className="back-link">
+    <Link to="/#" className="back-link">
       <span className="arrow arrow-left"></span>
       <span className="aria-hidden">Navigate to home</span>
-    </a>
+    </Link>
     <FontAwesomeIcon icon={props.icon} />
     <h2>{props.page.charAt(0).toUpperCase() + props.page.slice(1)}</h2>
   </header>;
