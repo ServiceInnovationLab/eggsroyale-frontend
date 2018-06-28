@@ -27,7 +27,7 @@ body {
     font-size: 40px;
     margin-top: 10px; }
   .body-bg h2 {
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 10px;
     font-size: 15px; }
   .body-bg svg,
@@ -194,14 +194,14 @@ nav span {
   color: #fff;
   display: inline-block; }
   .back-link svg {
-    margin-top: 0; }
+    margin-top: 15px; }
   .back-link .arrow {
     border: solid #fff;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 6px;
     position: absolute !important;
-    top: 130%;
+    top: 40%;
     left: -125px; }
     .back-link .arrow.arrow-sm {
       padding: 4px;

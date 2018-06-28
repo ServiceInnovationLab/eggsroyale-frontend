@@ -39,7 +39,7 @@ body {
   }
 
   h2 {
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 10px;
     font-size: 15px;
   }
@@ -268,7 +268,7 @@ nav {
   display: inline-block;
 
   svg {
-    margin-top: 0;
+    margin-top: 15px;
   }
 
   .arrow {
@@ -277,7 +277,7 @@ nav {
     display: inline-block;
     padding: 6px;
     position: absolute !important;
-    top: 130%;
+    top: 40%;
     left: -125px;
 
     &.arrow-sm {

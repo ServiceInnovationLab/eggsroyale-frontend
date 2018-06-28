@@ -66,6 +66,7 @@ const ListItems = props => {
           <span className="listing-details">
             <h3 className={`${props.theme}-text`}>{item.SERVICE_NAME}</h3>
             <p>{item.PROVIDER_NAME}</p>
+
           </span>
         </Link>
       </li>;
@@ -75,12 +76,14 @@ const ListItems = props => {
 
 const ListingHeader = props => {
   return <header className={props.theme}>
-    <HashRouter><Link to="/#" className="back-link">
-      <span className="arrow arrow-left"></span>
-      <span className="aria-hidden">Navigate to home</span>
-    </Link></HashRouter>
-    <FontAwesomeIcon icon={props.icon} />
-    <h2>{props.page.charAt(0).toUpperCase() + props.page.slice(1)}</h2>
+    <HashRouter>
+      <Link to="/#" className="back-link">
+        <span className="arrow arrow-left"></span>
+        <span className="aria-hidden">Navigate to home</span>
+        <FontAwesomeIcon icon={props.icon} />
+        <h2>{props.page.charAt(0).toUpperCase() + props.page.slice(1)}</h2>
+      </Link>
+    </HashRouter>
   </header>;
 };
 

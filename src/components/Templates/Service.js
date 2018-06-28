@@ -94,12 +94,14 @@ const Definition = props => {
 const Header = () => {
   return (
     <header className="home-header compact">
-        <HashRouter><Link to="/#" className="back-link">
+      <HashRouter>
+        <Link to="/#" className="back-link">
           <span className="arrow arrow-left arrow-sm"></span>
           <FontAwesomeIcon icon="home" />
           <span><p>Home</p></span>
           <span className="aria-hidden">Navigate to home</span>
-        </Link></HashRouter>
+        </Link>
+      </HashRouter>
     </header>
   );
 };
