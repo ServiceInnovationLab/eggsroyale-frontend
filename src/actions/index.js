@@ -57,7 +57,7 @@ export function loadResults(searchVars) {
     return (dispatch) => {
       dispatch(showResults([], searchVars, 0, true));
     };
-  }else{
+  }
     return (dispatch) => {
       dispatch(loadingResults(true));
       return axios.get(requestBuilder(searchVars)).then((response)=>{
@@ -69,7 +69,7 @@ export function loadResults(searchVars) {
         }
       });
     };
-  }
+  
 }
 
 export function mergeData(data, results) {
