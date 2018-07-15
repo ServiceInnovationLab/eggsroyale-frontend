@@ -148,7 +148,6 @@ class Search extends Component {
     const dataServices = jsonQuery(`services[CATEGORY=${this.state.keyword}].SERVICE_NAME`, {
       data: jsonData
     });
-    console.log('dataservices', dataServices.value);
     return (
       <div>
         <form className="form container" onSubmit={e => this.formSubmit(e)}>
