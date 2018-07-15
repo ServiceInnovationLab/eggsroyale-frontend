@@ -14,10 +14,10 @@ class Service extends Component {
   render() {
     return (
       <li className='home'>
-        <Link to={`home/${this.props.results.FSD_ID}`}>
+        <Link to={`home/${this.props.results}`}>
           <span className="listing-details" style={{marginLeft: '10px'}}>
-            <h3>{this.props.results.PROVIDER_NAME}</h3>
-            <p>{this.props.results.SERVICE_DETAIL}</p>
+            {/* <h3>{this.props.results.PROVIDER_NAME}</h3> */}
+            {/* <p>{this.props.results.SERVICE_DETAIL}</p> */}
           </span>
         </Link>
       </li>

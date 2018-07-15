@@ -5,6 +5,8 @@ import * as actionCreators from '../../actions/index';
 import MapResults from '../Map/MapResults';
 import Service from '../../components/Service/Service';
 import '../../styles/Form.css';
+import jsonData from '../../csv2.js';
+import jsonQuery from 'json-query';
 
 import fontawesome from '@fortawesome/fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
@@ -143,18 +145,22 @@ class Search extends Component {
   }
 
   render() {
+    const dataServices = jsonQuery(`services[CATEGORY=${this.state.keyword}].SERVICE_NAME`, {
+      data: jsonData
+    });
+    console.log('dataservices', dataServices.value);
     return (
       <div>
-        <form className="form" onSubmit={e => this.formSubmit(e)}>
+        <form className="form container" onSubmit={e => this.formSubmit(e)}>
           <input value={this.state.keyword} type="search" name="keyword" onBlur={this.keywordBlur.bind(this)} onKeyPress={this.enterPressed.bind(this)} onChange={e => this.onKeywordChange(e.target.value)} placeholder="Enter topic or organisation" />
           <button type="submit">Search</button>
           {(!this.props.noSearchVars && this.props.hasSearched) && <Route render={({ history,location}) => (<button type="button" onClick={()=> {(location.pathname !== '/' && history.push(''));this.resetForm();}}>Reset form</button>)} />}
         </form>
         <div className={'results' + (this.props.itemsLoading ? ' loading' : '')}>
-          {this.resultCountButton()}
+          <div className="container">{this.resultCountButton()}</div>
           { !this.props.itemsLoading && this.state.showMap && <MapResults className="container-fluid" LatLng={this.props.searchVars.addressLatLng} map_results={this.props.results} />}
-          { !this.props.itemsLoading && !this.state.showMap && this.props.results.map((data,index)=>
-            <Result key={index} data={data} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} loadResults={this.props.loadResults}/>)}
+          { !this.props.itemsLoading && !this.state.showMap && dataServices.references.map((data,index)=>
+            <Result key={index} data={data} serviceData={`0000${index+1}`} changeCategory={this.props.changeCategory} searchVars={this.props.searchVars} loadResults={this.props.loadResults}/>)}
         </div>
       </div>
     );
@@ -165,7 +171,8 @@ const Result = props => {
   return <div className="home-bg listing">
     <div className="container">
       <ul className="list-stripped" style={{paddingBottom: 0}}>
-        <Service results={props.data} changeCategory={props.changeCategory} searchVars={props.searchVars} serviceId={props.data.FSD_ID} loadResults={props.loadResults} />
+        {props.FSD_ID}
+        <Service results={props.FSD_ID} changeCategory={props.changeCategory} searchVars={props.searchVars} serviceId={props.data.FSD_ID} loadResults={props.loadResults} />
       </ul>
     </div>
   </div>;
