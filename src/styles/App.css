@@ -27,7 +27,7 @@ body {
     font-size: 40px;
     margin-top: 10px; }
   .body-bg h2 {
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 10px;
     font-size: 15px; }
   .body-bg svg,
@@ -193,15 +193,13 @@ nav span {
   text-decoration: none;
   color: #fff;
   display: inline-block; }
-  .back-link svg {
-    margin-top: 0; }
   .back-link .arrow {
     border: solid #fff;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 6px;
     position: absolute !important;
-    top: 130%;
+    top: 40%;
     left: -125px; }
     .back-link .arrow.arrow-sm {
       padding: 4px;
@@ -252,7 +250,7 @@ nav span {
     color: rgba(255, 255, 255, 0.7); }
 
 .service .container-inner {
-  margin: 0 40px;
+  margin: 20px 40px;
   height: 100%;
   padding-top: 20px;
   padding-bottom: 130px; }
@@ -275,5 +273,8 @@ nav span {
   padding-top: 65px; }
   .home-nav a {
     padding: 20px !important; }
+
+.form > input {
+  margin-top: 80px; }
 
 /*# sourceMappingURL=App.css.map */
