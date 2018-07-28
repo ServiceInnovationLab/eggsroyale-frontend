@@ -23,7 +23,7 @@ describe('Proximity', () => {
   });
 
   it('Slider returns default value when "changed"', () => {
-    var returnedValue;
+    let returnedValue;
     props.addressLatLng = {lat:-41.0,lng: 174.0}; /*roughly the centre of nz */
     props.handler = function(value){
       returnedValue = value;
@@ -36,7 +36,7 @@ describe('Proximity', () => {
   });
 
   it('Slider returns appropriate value when changed', () => {
-    var returnedValue;
+    let returnedValue;
     props.addressLatLng = {lat:-41.0,lng: 174.0}; /*roughly the centre of nz */
     props.handler = function(value){
       returnedValue = value;

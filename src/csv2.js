@@ -1,4 +1,4 @@
-var jsonData = {
+let jsonData = {
   services: [
     {
       'SERVICE_ID': 1,
